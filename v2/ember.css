@@ -1,0 +1,163 @@
+/* ============================================================
+   BLOCS-ME V2 — Ember design system
+   Gradient-first palette: solar #F9B233 → tangerine #F87A1E
+   → vermilion #E93A0E on warm graphite surfaces.
+   Loaded after style.css — overrides tokens + accent surfaces.
+   ============================================================ */
+
+:root{
+  /* warm graphite neutrals (espresso undertone) */
+  --c-black:     #0F0C09;
+  --c-coal:      #292219;
+  --c-line:      #4E463C;
+  --c-muted:     #8F8577;
+  --c-soft:      #ABA294;
+  --c-sand:      #D0C9BF;
+  --c-paper:     #F7F1E8;
+
+  /* brand fire */
+  --c-accent:    #F87A1E;
+  --c-accent-hi: #F9B233;
+
+  --ember-grad:      linear-gradient(135deg, #F9B233 0%, #F87A1E 45%, #E93A0E 100%);
+  --ember-grad-90:   linear-gradient(90deg,  #F9B233 0%, #F87A1E 45%, #E93A0E 100%);
+  --ember-grad-deep: linear-gradient(135deg, #F87A1E 0%, #E93A0E 55%, #B32806 100%);
+  --ember-umbra:     #33140A;   /* text on gradient */
+  --ember-smolder:   #6E1B08;   /* italic accents on gradient */
+}
+
+/* ---------- primary action = the gradient ---------- */
+.btn--solid{
+  background: var(--ember-grad);
+  color: var(--ember-umbra);
+  box-shadow: 0 0 0 0 rgba(233,58,14,0);
+}
+.btn--solid:hover{
+  background: var(--ember-grad);
+  filter: brightness(1.07) saturate(1.05);
+  box-shadow: 0 12px 40px -8px rgba(233,58,14,.45);
+}
+.mobile-menu .btn--solid{ color: var(--ember-umbra); }
+
+.map__pin b{
+  background: var(--ember-grad);
+  color: var(--ember-umbra);
+  box-shadow: 0 0 0 3px rgba(248,122,30,.30), 0 3px 10px rgba(0,0,0,.55);
+}
+.mcard__btn{
+  background: var(--ember-grad);
+  color: var(--ember-umbra);
+}
+
+/* ---------- gradient type highlights ---------- */
+.hero__title .hl,
+.accent-italic{
+  background: var(--ember-grad-90);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* italic glyphs overhang the em's box; background-clip:text paints only
+     inside it — widen the paint box, compensate with negative margins */
+  padding: .1em .16em .12em .05em;
+  margin: -.1em -.16em -.12em -.05em;
+}
+
+/* ---------- accent surfaces become molten ---------- */
+.section--accent{
+  background: var(--ember-grad);
+  color: var(--ember-umbra);
+}
+.cta__panel{
+  background: var(--ember-grad);
+  color: var(--ember-umbra);
+}
+.cta__title-last{ color: var(--ember-smolder); }
+.section--accent ::selection,
+.cta ::selection{ background: var(--c-black); color: var(--c-accent-hi); }
+
+/* marquee block ticks keep the fire */
+.mq-block{ background: var(--ember-grad); }
+
+/* ---------- dashboard accents ---------- */
+.frow__bar b{ background: var(--ember-grad-90); }
+.dash__insight{
+  background: var(--ember-grad);
+  color: var(--ember-umbra);
+}
+
+/* ---------- geo map ---------- */
+.geo-ring{ stroke: #F87A1E; }
+
+/* ---------- cases: one warm-gray family (Ember g100/g200) ---------- */
+.case{ background: #F2EFEA; }
+.case__photo{ background: #E5E0D8; }
+
+/* ---------- auth page ---------- */
+.auth-brand{
+  background: var(--ember-grad);
+  color: var(--ember-umbra);
+}
+.auth-line--outline em{ color: var(--ember-smolder); }
+.auth-brand ::selection{ background: var(--c-black); color: var(--c-accent-hi); }
+
+/* ---------- display type: one step smaller (fixes clipping) ---------- */
+.hero__title{ font-size: clamp(30px, 3.9vw, 54px); }
+.h2{ font-size: clamp(32px, 4.4vw, 68px); }
+.h2--sm{ font-size: clamp(28px, 3.4vw, 50px); }
+.faq .h2--sm{ font-size: clamp(26px, 2.7vw, 40px); }
+.cta__title{ font-size: clamp(21px, 2.6vw, 40px); }
+.auth-title{ font-size: clamp(23px, 2.3vw, 36px); }
+
+/* ---------- logo: ~12% larger in v2 ---------- */
+.logo-img{ height: 32px; }
+.footer__logo img{ height: 32px; }
+.app__logo img{ height: 20px; }
+.auth-brand__logo img{ height: 32px; }
+.dash__logo{ height: 19px; }
+
+/* ---------- language switcher = ghost button (same as Log in) ---------- */
+.lang-dd summary{
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  padding: 11px 20px;
+  color: var(--c-paper);
+  border: 1px solid var(--c-line);
+}
+.lang-dd summary:hover{
+  color: var(--c-paper);
+  border-color: var(--c-paper);
+  background: color-mix(in srgb, var(--c-paper) 8%, transparent);
+}
+.auth-brand__top .lang-dd summary{
+  color: var(--ember-umbra);
+  border-color: color-mix(in srgb, var(--c-black) 30%, transparent);
+}
+.auth-brand__top .lang-dd summary:hover{
+  color: var(--c-black);
+  border-color: var(--c-black);
+  background: color-mix(in srgb, var(--c-black) 6%, transparent);
+}
+
+/* ---------- in-app logo +10% ---------- */
+.app__logo img{ height: 22px; }
+
+/* ---------- platform slider cards: lift off the ivory section ---------- */
+.scard{
+  background: #FFFFFF;
+  border: 1px solid rgba(34,28,22,.08);
+  box-shadow: none;
+}
+.scard__chips > b{ background: #F2EFEA; color: #221C16; }
+
+/* ---------- headline overhang: widen the split clip box so italic
+   tails and descenders are not cut (layout unchanged) ---------- */
+.hero__title .split,
+.h2 .split,
+.cta__title .split{
+  padding-bottom: .09em; margin-bottom: -.09em;
+  padding-inline-end: .1em; margin-inline-end: -.1em;
+}
+
+/* ---------- auth: language selector pinned right ---------- */
+.auth-brand__top{ justify-content: flex-start; }
+.auth-brand__top .lang-dd{ margin-inline-start: auto; }

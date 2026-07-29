@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCS-ME — ذكاء مشاريع الإنشاءات في الشرق الأوسط</title>
+  <meta name="description" content="Instant access to 24,000+ verified construction projects and 9,600+ active tenders across the Middle East. Real-time intelligence, verified on the ground." />
+  <meta property="og:title" content="BLOCS-ME — Know every project. First." />
+  <meta property="og:description" content="24,000+ verified construction projects · 9,600+ active tenders · verified on the ground by 160+ researchers." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2310100F'/%3E%3Crect x='7' y='7' width='11' height='11' fill='%23FBBB21'/%3E%3Crect x='14' y='14' width='11' height='11' fill='%23E0DED7'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css?v=21" />
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+
+  <!-- shared inline assets (logo, fake photos) -->
+  <svg width="0" height="0" style="position:absolute">
+            <defs>
+              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#B9D6EE"/><stop offset="1" stop-color="#E9F2FA"/>
+              </linearGradient>
+              <symbol id="imgTower" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+                <rect width="300" height="200" fill="url(#skyG)"/>
+                <ellipse cx="70" cy="38" rx="46" ry="13" fill="#fff" opacity=".5"/>
+                <ellipse cx="225" cy="24" rx="58" ry="11" fill="#fff" opacity=".4"/>
+                <polygon points="150,6 154,6 158,200 146,200" fill="#3E4C59"/>
+                <polygon points="140,50 164,50 170,200 134,200" fill="#54677A"/>
+                <polygon points="128,94 176,94 183,200 121,200" fill="#6B7F93"/>
+                <polygon points="114,136 190,136 197,200 107,200" fill="#7E93A6"/>
+                <rect x="149" y="58" width="2.5" height="142" fill="#C9DCEC" opacity=".8"/>
+                <rect x="161" y="98" width="2.5" height="102" fill="#C9DCEC" opacity=".6"/>
+                <rect x="138" y="98" width="2.5" height="102" fill="#A9BFD2" opacity=".6"/>
+                <rect x="200" y="150" width="46" height="50" fill="#8DA2B4"/>
+                <rect x="56" y="160" width="52" height="40" fill="#93A9BB"/>
+                <rect x="16" y="170" width="34" height="30" fill="#7E93A6"/>
+              </symbol>
+              <symbol id="imgTower2" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+                <rect width="300" height="200" fill="url(#skyG)"/>
+                <ellipse cx="240" cy="30" rx="52" ry="12" fill="#fff" opacity=".5"/>
+                <polygon points="88,34 148,22 152,200 84,200" fill="#4E6478"/>
+                <polygon points="160,48 218,40 224,200 156,200" fill="#63798D"/>
+                <g stroke="#BCD3E5" stroke-width="1.6" opacity=".75">
+                  <path d="M96,50 L96,200 M112,46 L112,200 M128,42 L128,200 M144,38 L144,200"/>
+                  <path d="M170,60 L170,200 M186,57 L186,200 M202,54 L202,200"/>
+                </g>
+                <rect x="20" y="150" width="52" height="50" fill="#8DA2B4"/>
+                <rect x="236" y="140" width="50" height="60" fill="#7E93A6"/>
+              </symbol>
+              <linearGradient id="duskG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#8E9BD6"/><stop offset=".55" stop-color="#E3A7B8"/><stop offset="1" stop-color="#F3C2A6"/>
+              </linearGradient>
+              <symbol id="imgTower4" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+                <rect width="300" height="200" fill="url(#skyG)"/>
+                <path d="M0,200 L0,8 Q98,16 122,54 Q142,86 130,200 Z" fill="#EDEFF1"/>
+                <path d="M300,200 L300,0 Q202,8 178,48 Q156,82 168,200 Z" fill="#E2E5E9"/>
+                <g stroke="#5B7A99" stroke-width="3" fill="none" opacity=".5">
+                  <path d="M6,42 Q82,48 106,74"/>
+                  <path d="M6,72 Q80,76 104,100"/>
+                  <path d="M6,102 Q82,104 108,128"/>
+                  <path d="M8,132 Q86,134 114,154"/>
+                  <path d="M10,162 Q92,162 120,180"/>
+                  <path d="M294,34 Q222,42 198,68"/>
+                  <path d="M294,64 Q220,70 194,94"/>
+                  <path d="M294,94 Q218,98 190,122"/>
+                  <path d="M292,124 Q214,128 186,150"/>
+                  <path d="M290,154 Q210,156 180,176"/>
+                </g>
+                <ellipse cx="150" cy="30" rx="40" ry="9" fill="#fff" opacity=".5"/>
+              </symbol>
+              <symbol id="imgTower5" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+                <rect width="300" height="200" fill="url(#duskG)"/>
+                <rect x="14" y="158" width="60" height="42" fill="#9C7F98" opacity=".7"/>
+                <rect x="236" y="150" width="52" height="50" fill="#8F7390" opacity=".7"/>
+                <rect x="118" y="34" width="58" height="166" fill="#C89A55"/>
+                <rect x="176" y="34" width="14" height="166" fill="#8F6B3A"/>
+                <g stroke="#EACB86" stroke-width="1.4" opacity=".8">
+                  <path d="M128,34 L128,200 M138,34 L138,200 M148,34 L148,200 M158,34 L158,200 M168,34 L168,200"/>
+                </g>
+                <g stroke="#7A5C33" stroke-width="1" opacity=".55">
+                  <path d="M118,62 L176,62 M118,92 L176,92 M118,122 L176,122 M118,152 L176,152 M118,180 L176,180"/>
+                </g>
+                <rect x="126" y="24" width="42" height="10" fill="#7A5C33"/>
+              </symbol>
+              <symbol id="imgTower3" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+                <rect width="300" height="200" fill="url(#skyG)"/>
+                <polygon points="0,200 150,26 300,200" fill="#3A3F46"/>
+                <polygon points="30,200 150,62 270,200" fill="#4C525B"/>
+                <g stroke="#6A7280" stroke-width="2">
+                  <path d="M150,26 L150,200 M110,72 L110,200 M190,72 L190,200 M70,118 L70,200 M230,118 L230,200"/>
+                  <path d="M60,164 L240,164 M84,136 L216,136 M108,108 L192,108 M128,84 L172,84"/>
+                </g>
+                <polygon points="0,200 150,26 300,200 300,200 0,200" fill="none"/>
+              </symbol>
+            </defs>
+          </svg>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#top" aria-label="BLOCS-ME home">
+        <img class="logo-img" src="../assets/blocs-logo.svg?v=3" alt="" aria-hidden="true" draggable="false">
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="#platform">المنصة</a>
+        <a href="#tenders">المناقصات</a>
+        <a href="#results">النتائج</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+        <a href="pricing.html">الأسعار</a>
+      </nav>
+      <div class="nav__actions">
+        <details class="lang-dd"><summary><svg viewBox="0 0 16 16" width="13" height="13" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.3"/><path d="M1.8 8h12.4M8 1.8c-1.8 1.7-2.7 3.8-2.7 6.2s.9 4.5 2.7 6.2c1.8-1.7 2.7-3.8 2.7-6.2S9.8 3.5 8 1.8z" stroke="currentColor" stroke-width="1.3"/></svg>عربي<svg class="lang-dd__chev" viewBox="0 0 10 6" width="9" height="6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="lang-dd__list"><a href="../index.html">English</a><a class="is-on" href="index.html" hreflang="ar" lang="ar">العربية</a><a href="../zh/index.html" hreflang="zh-CN" lang="zh-CN">中文</a></div></details>
+        <a class="btn btn--ghost btn--sm" href="auth.html">تسجيل الدخول</a>
+        <a class="btn btn--solid btn--sm magnetic" href="#cta">احجز عرضًا تجريبيًا</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#platform">المنصة</a>
+    <a href="#tenders">المناقصات</a>
+    <a href="#results">النتائج</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="pricing.html">الأسعار</a>
+    <div class="mobile-menu__langs">
+      <a class="lang-switch" href="../index.html">English</a>
+      <a class="lang-switch is-on" href="index.html" hreflang="ar" lang="ar">العربية</a>
+      <a class="lang-switch" href="../zh/index.html" hreflang="zh-CN" lang="zh-CN">中文</a>
+    </div>
+    <div class="mobile-menu__btns">
+      <a class="btn btn--ghost" href="auth.html">تسجيل الدخول</a>
+      <a class="btn btn--solid" href="#cta">احجز عرضًا تجريبيًا</a>
+    </div>
+  </div>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__canvas" aria-hidden="true">
+        <canvas id="scene"></canvas>
+        <div class="hero__fade"></div>
+      </div>
+
+      <div class="container hero__content">
+
+        <h1 class="hero__title" aria-label="Instant access to 24,000+ verified construction projects with 9,600+ active tenders">
+          <span class="line split">وصول فوري إلى <em class="hl">24,000+</em></span>
+          <span class="line split">مشروع إنشائي مُوثَّق</span>
+          <span class="line split">مع <em class="hl">9,600+</em> مناقصة نشطة</span>
+        </h1>
+
+        <p class="hero__sub" data-anim="hero-sub">
+          معلومات لحظية، وبيانات مشاريع موثّقة، وتواصل مباشر مع صنّاع القرار — منصة مصمَّمة للمصنّعين والمورّدين والمقاولين.
+        </p>
+
+        <div class="hero__cta" data-anim="hero-cta">
+          <a class="btn btn--solid btn--lg magnetic" href="auth.html">احصل على 10 مشاريع مجانًا
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+        </div>
+
+        <p class="hero__trust" data-anim="hero-trust">
+          لا حاجة لبطاقة ائتمان &nbsp;·&nbsp; وصول فوري
+        </p>
+      </div>
+
+      <div class="container hero__demo" data-anim="hero-demo">
+        <div class="demo-scale">
+        <div class="demo" aria-hidden="true">
+
+          <!-- shared fake project photo -->
+          <!-- top bar -->
+          <div class="app__top">
+            <span class="app__logo"><img src="../assets/blocs-logo-dark.svg?v=3" alt="" draggable="false"></span>
+            <span class="app__filters">
+              <b>القطاع <i>&#8964;</i></b><b>المرحلة <i>&#8964;</i></b><b>الميزانية <i>&#8964;</i></b>
+            </span>
+            <span class="app__filterbtn"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M2 3h12M4.5 8h7M6.5 13h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            <span class="app__menu"><i></i><i></i><i></i></span>
+          </div>
+
+          <!-- tools row -->
+          <div class="app__tools">
+            <span class="app__search"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><circle cx="7" cy="7" r="4.4" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <span class="app__toggle"><i></i>المفضلة</span>
+            <span class="app__toggle"><i></i>المتابَعة</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><circle cx="8" cy="5" r="2.6" stroke="currentColor" stroke-width="1.5"/><path d="M2.8 14c.7-3 2.7-4.4 5.2-4.4s4.5 1.4 5.2 4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>الوكيل</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M3 13V8M8 13V3M13 13v-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>التقييم</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M2 4l4-1.5L10 4l4-1.5v9.5L10 13.5 6 12l-4 1.5V4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 2.5V12M10 4v9.5" stroke="currentColor" stroke-width="1.2"/></svg>الموقع</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M2.5 8.5L6 12l7.5-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>الحالة</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><rect x="2.5" y="2" width="11" height="12" rx="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="6.4" r="1.7" stroke="currentColor" stroke-width="1.3"/><path d="M5 11.6c.6-1.4 1.7-2 3-2s2.4.6 3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>المطوّر</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><rect x="3" y="2.6" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M6 1.6h4v2.2H6z" stroke="currentColor" stroke-width="1.3"/><path d="M5.6 8h4.8M5.6 11h3.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>الاستشاري</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><circle cx="5.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.5"/><path d="M8.1 8h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 6.2V9.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>المقاول</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M10.6 5.4L9 9l-3.6 1.6L7 7l3.6-1.6z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>الدولة/الإمارة/المدينة</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M8 2v12M4.5 5.2C4.5 4 6 3.4 8 3.4s3.5.7 3.5 1.9S10 7 8 7s-3.5.6-3.5 1.8S6 10.7 8 10.7s3.5.6 3.5 1.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>القيمة</span>
+            <span class="app__tool"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M2 12l4-4 2.6 2.6L14 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 5H14v3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>الإنجاز</span>
+          </div>
+
+          <!-- body: list + dark map -->
+          <div class="app__body">
+            <div class="app__list">
+              <div class="app__listhead">
+                <span class="app__view is-on"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="8" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="8" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>بطاقات</span>
+                <span class="app__view"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><rect x="1" y="2" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M1 6h12M5.5 6v6" stroke="currentColor" stroke-width="1.2"/></svg>جدول</span>
+                <span class="app__showing">عرض 81 عنصرًا</span>
+                <span class="app__sort">إجمالي الميزانية <i>&#8964;</i></span>
+              </div>
+
+              <div class="pcard">
+                <span class="pcard__photo">
+                  <img src="../assets/photos/p03.jpg" alt="" loading="lazy">
+                  <b class="pcard__score"><svg viewBox="0 0 10 10" width="8" height="8" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.5</b>
+                </span>
+                <span class="pcard__body">
+                  <span class="pcard__row"><em>الرعاية الصحية والمستشفيات</em>
+                    <i class="ic ic--heart"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                    <i class="ic"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+                  </span>
+                  <strong>آيكونيك ريزيدنس من ميرد / قطعة 382077</strong>
+                  <span class="pcard__addr">الإمارات &ndash; دبي &ndash; 67CP+H4Q &ndash; شارع الشيخ زايد &ndash; المركز التجاري الثانية</span>
+                  <span class="pcard__money"><b>$1.2M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$8.5M</b> إجمالي</span>
+                  <span class="pcard__chips">
+                    <b>الإنجاز <strong>50%</strong></b>
+                    <b>الحالة <strong>تخطيط</strong></b>
+                    <span class="pcard__dev"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M5.5 8.5l3-3M6.5 4L8 2.5a2.1 2.1 0 0 1 3 3L9.5 7M7.5 10L6 11.5a2.1 2.1 0 0 1-3-3L4.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>مطوّر إماراتي</span>
+                  </span>
+                </span>
+              </div>
+
+              <div class="pcard">
+                <span class="pcard__photo">
+                  <img src="../assets/photos/p07.jpg" alt="" loading="lazy">
+                  <b class="pcard__score"><svg viewBox="0 0 10 10" width="8" height="8" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.1</b>
+                </span>
+                <span class="pcard__body">
+                  <span class="pcard__row"><em>سكني ومتعدد الاستخدامات</em>
+                    <i class="ic ic--heart"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                    <i class="ic"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+                  </span>
+                  <strong>مارينا جيت ووترفرونت / قطعة 194502</strong>
+                  <span class="pcard__addr">الإمارات &ndash; دبي &ndash; 58QF+W2M &ndash; دبي مارينا &ndash; الصفوح الثانية</span>
+                  <span class="pcard__money"><b>$2.4M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$14M</b> إجمالي</span>
+                  <span class="pcard__chips">
+                    <b>الإنجاز <strong>35%</strong></b>
+                    <b>الحالة <strong>تصميم</strong></b>
+                    <span class="pcard__dev"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M5.5 8.5l3-3M6.5 4L8 2.5a2.1 2.1 0 0 1 3 3L9.5 7M7.5 10L6 11.5a2.1 2.1 0 0 1-3-3L4.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>مطوّر إماراتي</span>
+                  </span>
+                </span>
+              </div>
+
+              <div class="pcard">
+                <span class="pcard__photo">
+                  <img src="../assets/photos/p11.jpg" alt="" loading="lazy">
+                  <b class="pcard__score"><svg viewBox="0 0 10 10" width="8" height="8" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>8.8</b>
+                </span>
+                <span class="pcard__body">
+                  <span class="pcard__row"><em>الرعاية الصحية والمستشفيات</em>
+                    <i class="ic ic--heart"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                    <i class="ic"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+                  </span>
+                  <strong>مجمع الخليج التجاري الطبي / قطعة 118246</strong>
+                  <span class="pcard__addr">الإمارات &ndash; دبي &ndash; 62JR+8C5 &ndash; الخليج التجاري &ndash; منطقة برج خليفة</span>
+                  <span class="pcard__money"><b>$860K</b> ذات صلة &nbsp;&middot;&nbsp; <b>$6.2M</b> إجمالي</span>
+                  <span class="pcard__chips">
+                    <b>الإنجاز <strong>65%</strong></b>
+                    <b>الحالة <strong>مناقصة</strong></b>
+                    <span class="pcard__dev"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M5.5 8.5l3-3M6.5 4L8 2.5a2.1 2.1 0 0 1 3 3L9.5 7M7.5 10L6 11.5a2.1 2.1 0 0 1-3-3L4.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>مطوّر إماراتي</span>
+                  </span>
+                </span>
+              </div>
+
+              <div class="pcard">
+                <span class="pcard__photo">
+                  <img src="../assets/photos/p01.jpg" alt="" loading="lazy">
+                  <b class="pcard__score"><svg viewBox="0 0 10 10" width="8" height="8" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.3</b>
+                </span>
+                <span class="pcard__body">
+                  <span class="pcard__row"><em>الضيافة والمنتجعات</em>
+                    <i class="ic ic--heart"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                    <i class="ic"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+                  </span>
+                  <strong>أبراج بوابة النخلة / قطعة 227831</strong>
+                  <span class="pcard__addr">الإمارات &ndash; دبي &ndash; 4XVC+Q7J &ndash; نخلة جميرا &ndash; منطقة الجذع</span>
+                  <span class="pcard__money"><b>$3.1M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$22M</b> إجمالي</span>
+                  <span class="pcard__chips">
+                    <b>الإنجاز <strong>20%</strong></b>
+                    <b>الحالة <strong>تخطيط</strong></b>
+                    <span class="pcard__dev"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M5.5 8.5l3-3M6.5 4L8 2.5a2.1 2.1 0 0 1 3 3L9.5 7M7.5 10L6 11.5a2.1 2.1 0 0 1-3-3L4.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>مطوّر إماراتي</span>
+                  </span>
+                </span>
+              </div>
+
+              <div class="pcard">
+                <span class="pcard__photo">
+                  <img src="../assets/photos/p14.jpg" alt="" loading="lazy">
+                  <b class="pcard__score"><svg viewBox="0 0 10 10" width="8" height="8" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>8.6</b>
+                </span>
+                <span class="pcard__body">
+                  <span class="pcard__row"><em>الصناعة والخدمات اللوجستية</em>
+                    <i class="ic ic--heart"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                    <i class="ic"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+                  </span>
+                  <strong>مركز الفرجان اللوجستي / قطعة 305114</strong>
+                  <span class="pcard__addr">الإمارات &ndash; دبي &ndash; 3W8M+F6P &ndash; الفرجان &ndash; منطقة جبل علي</span>
+                  <span class="pcard__money"><b>$540K</b> ذات صلة &nbsp;&middot;&nbsp; <b>$3.8M</b> إجمالي</span>
+                  <span class="pcard__chips">
+                    <b>الإنجاز <strong>80%</strong></b>
+                    <b>الحالة <strong>إنشاء</strong></b>
+                    <span class="pcard__dev"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M5.5 8.5l3-3M6.5 4L8 2.5a2.1 2.1 0 0 1 3 3L9.5 7M7.5 10L6 11.5a2.1 2.1 0 0 1-3-3L4.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>مطوّر إماراتي</span>
+                  </span>
+                </span>
+              </div>
+
+              <div class="pcard">
+                <span class="pcard__photo">
+                  <img src="../assets/photos/p05.jpg" alt="" loading="lazy">
+                  <b class="pcard__score"><svg viewBox="0 0 10 10" width="8" height="8" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.0</b>
+                </span>
+                <span class="pcard__body">
+                  <span class="pcard__row"><em>التجزئة والتجاري</em>
+                    <i class="ic ic--heart"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                    <i class="ic"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+                  </span>
+                  <strong>مول مجتمع قرية جميرا / قطعة 261903</strong>
+                  <span class="pcard__addr">الإمارات &ndash; دبي &ndash; 5X2H+3RQ &ndash; قرية جميرا &ndash; المنطقة 12</span>
+                  <span class="pcard__money"><b>$1.7M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$9.4M</b> إجمالي</span>
+                  <span class="pcard__chips">
+                    <b>الإنجاز <strong>45%</strong></b>
+                    <b>الحالة <strong>تصميم</strong></b>
+                    <span class="pcard__dev"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M5.5 8.5l3-3M6.5 4L8 2.5a2.1 2.1 0 0 1 3 3L9.5 7M7.5 10L6 11.5a2.1 2.1 0 0 1-3-3L4.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>مطوّر إماراتي</span>
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <!-- dark Dubai map -->
+            <div class="app__map" id="demoMap">
+              <div class="map__zoomwrap" id="mapZoom">
+              <svg class="map__base" viewBox="0 0 1000 940" preserveAspectRatio="none">
+                <rect width="1000" height="940" fill="#1C1C1A" />
+                <!-- sea -->
+                <polygon points="0,0 390,0 180,940 0,940" fill="#131312" />
+                <path d="M390,0 L180,940" stroke="#282825" stroke-width="3" fill="none" />
+                <!-- Palm Jumeirah -->
+                <g stroke="#232321" fill="none">
+                  <circle cx="318" cy="330" r="52" stroke-width="14" />
+                  <path d="M318,270 L318,392" stroke-width="12" />
+                  <path d="M282,300 L354,362 M282,362 L354,300 M270,330 L366,330" stroke-width="9" />
+                </g>
+                <!-- highways -->
+                <path d="M470,0 L310,940" stroke="#454440" stroke-width="5" fill="none" />
+                <path d="M690,0 L545,940" stroke="#3B3A36" stroke-width="4" fill="none" />
+                <path d="M900,0 L765,940" stroke="#343330" stroke-width="3.5" fill="none" />
+                <!-- cross streets -->
+                <g stroke="#2B2B28" stroke-width="2" fill="none">
+                  <path d="M420,110 L1000,70" /><path d="M400,235 L1000,190" />
+                  <path d="M375,370 L1000,320" /><path d="M350,510 L1000,455" />
+                  <path d="M330,650 L1000,590" /><path d="M305,790 L1000,725" />
+                  <path d="M560,60 L480,500" /><path d="M800,100 L700,620" />
+                </g>
+              </svg>
+
+              <!-- area labels -->
+              <span class="map__area" style="left:52%;top:12%">أم سقيم</span>
+              <span class="map__area" style="left:88%;top:13%">القوز<br/>الرابعة</span>
+              <span class="map__area map__area--ru" style="left:74%;top:26%">البرشاء</span>
+              <span class="map__area" style="left:55%;top:33%">Dubai<br/>Internet City</span>
+              <span class="map__area" style="left:87%;top:37%">البرشاء<br/>جنوب</span>
+              <span class="map__area map__area--ru" style="left:41%;top:41%">دبي<br/>مارينا</span>
+              <span class="map__area" style="left:60%;top:44%">تلال الإمارات</span>
+              <span class="map__area" style="left:80%;top:46%">قرية جميرا<br/>الدائرية</span>
+              <span class="map__area map__area--ru" style="left:30%;top:32%">نخلة<br/>جميرا</span>
+              <span class="map__area" style="left:89%;top:55%">مدينة دبي<br/>للسيارات</span>
+              <span class="map__area" style="left:66%;top:60%">مدينة دبي<br/>للإنتاج</span>
+              <span class="map__area" style="left:54%;top:63%">الفرجان</span>
+              <span class="map__area" style="left:63%;top:70%">قرية المجتمع<br/>الأخضر</span>
+              <span class="map__area" style="left:89%;top:67%">رمرام</span>
+              <span class="map__area map__area--ru" style="left:16%;top:70%">جبل علي</span>
+              <span class="map__area" style="left:42%;top:73%">جبل علي<br/>الصناعية</span>
+              <span class="map__area" style="left:10%;top:81%">حي القناة</span>
+              <span class="map__area" style="left:47%;top:85%">جبل علي<br/>الصناعية الثانية</span>
+              <span class="map__area" style="left:7%;top:88%">فينيتو</span>
+
+              <!-- road shields -->
+              <span class="map__road" style="left:47%;top:16%">شارع الشيخ زايد</span>
+              <span class="map__shield" style="left:43%;top:22%">E11</span>
+              <span class="map__shield" style="left:64%;top:34%">E311</span>
+              <span class="map__shield" style="left:59%;top:76%">E77</span>
+              <span class="map__shield" style="left:83%;top:83%">E611</span>
+
+              <!-- price markers -->
+              <span class="map__price" style="left:66%;top:17%">$2M</span>
+              <span class="map__cluster" style="left:46%;top:24%"><b>8</b>from <strong>$1M</strong></span>
+              <span class="map__price" style="left:58%;top:24%">$1.2M</span>
+              <span class="map__price" id="mapHov1" style="left:49%;top:28%">$999K</span>
+              <span class="map__price" id="mapHov2" style="left:60%;top:31%">$500K</span>
+              <span class="map__price" style="left:84%;top:29%">$500K</span>
+              <span class="map__price" style="left:86%;top:41%">$200K</span>
+              <span class="map__price" style="left:46%;top:39%">$900K</span>
+              <span class="map__cluster" style="left:70%;top:42%"><b>10+</b>from <strong>$810K</strong></span>
+              <span class="map__price" style="left:49%;top:50%">$500K</span>
+              <span class="map__price" style="left:72%;top:49%">$500K</span>
+              <span class="map__price" style="left:67%;top:55%">$500K</span>
+              <span class="map__price" style="left:24%;top:52%">$3M</span>
+              <span class="map__cluster" style="left:12%;top:62%"><b>3</b>from <strong>$500K</strong></span>
+              <span class="map__price" style="left:9%;top:68%">$3M</span>
+              <span class="map__price" style="left:37%;top:79%">$200K</span>
+
+              <!-- active marker (click target) -->
+              <span class="map__pin" id="mapPin"><b>$500K</b></span>
+
+              </div><!-- /map__zoomwrap -->
+
+              <!-- controls -->
+              <span class="map__ctl map__ctl--back"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><circle cx="8" cy="8" r="5.4" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="1.6" fill="currentColor"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="currentColor" stroke-width="1.4"/></svg></span>
+              <span class="map__ctl map__ctl--zoom"><b>+</b><b>&minus;</b></span>
+
+              <!-- project popup card -->
+              <div class="mcard" id="mapCard">
+                <span class="mcard__photo">
+                  <img src="../assets/photos/p03.jpg" alt="" loading="lazy">
+                  <b class="pcard__score"><svg viewBox="0 0 10 10" width="8" height="8" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.5</b>
+                  <span class="mcard__acts">
+                    <i><svg viewBox="0 0 16 16" width="12" height="12"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                    <i><svg viewBox="0 0 16 16" width="12" height="12" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+                  </span>
+                </span>
+                <span class="mcard__body">
+                  <em class="mcard__cat">الرعاية الصحية والمستشفيات</em>
+                  <strong class="mcard__title">آيكونيك ريزيدنس من ميرد / قطعة 382077</strong>
+                  <span class="mcard__addr">الإمارات &ndash; دبي &ndash; 67CP+H4Q &ndash; شارع الشيخ زايد &ndash; المركز التجاري الثانية</span>
+                  <span class="mcard__money"><b>$1.2M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$8.5M</b> إجمالي</span>
+                  <span class="mcard__chips">
+                    <b><svg viewBox="0 0 12 12" width="9" height="9" fill="none"><path d="M1.5 9l3-3 2 2L10.5 3" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>50%</b>
+                    <b><svg viewBox="0 0 12 12" width="9" height="9" fill="none"><path d="M2 6.5L5 9.5 10 3" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>تخطيط</b>
+                  </span>
+                  <span class="mcard__tender">
+                    <i class="mcard__tico"><svg viewBox="0 0 16 16" width="13" height="13" fill="none"><rect x="3.5" y="1.5" width="9" height="13" rx="1" stroke="currentColor" stroke-width="1.4"/><circle cx="10.3" cy="8.4" r="1" fill="currentColor"/></svg></i>
+                    <span><strong>توريد 1,000 باب</strong>يُغلق طلب العروض خلال 12 يومًا</span>
+                  </span>
+                  <span class="mcard__btn" id="mapCardBtn">شارك في المناقصة</span>
+                </span>
+              </div>
+
+              <!-- animated cursor -->
+              <div class="map__cursor" id="mapCursor">
+                <svg width="22" height="22" viewBox="0 0 24 24">
+                  <path d="M2 2l7 18 2.6-7.4L19 10 2 2z" fill="#fff" stroke="#10100F" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="Key numbers">
+      <div class="container stats__grid">
+        <div class="stat fade-up">
+          <div class="stat__num"><span data-count="24000">0</span><em>+</em></div>
+          <p class="stat__label">مشاريع إنشائية موثّقة يفحصها ويحدّثها فريقنا</p>
+        </div>
+        <div class="stat fade-up">
+          <div class="stat__num"><span data-count="9600">0</span><em>+</em></div>
+          <p class="stat__label">مناقصات نشطة بنطاق كامل ومستندات محدّثة</p>
+        </div>
+        <div class="stat fade-up">
+          <div class="stat__num"><span data-count="160">0</span><em>+</em></div>
+          <p class="stat__label">باحث ميداني في 7 دول يعملون على مدار الساعة</p>
+        </div>
+        <div class="stat fade-up">
+          <div class="stat__num"><span data-count="150">0</span><em>+</em></div>
+          <p class="stat__label">مشروع حصري جديد يُضاف يوميًا — قبل أي منصة أخرى</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" dir="ltr" aria-hidden="true">
+      <div class="marquee__track">
+        <span>موثّق ميدانيًا <b class="mq-block"></b> الأسبق معرفةً <b class="mq-block"></b> مباشرةً إلى صنّاع القرار <b class="mq-block"></b> موثّق ميدانيًا <b class="mq-block"></b> الأسبق معرفةً <b class="mq-block"></b> مباشرةً إلى صنّاع القرار <b class="mq-block"></b> </span><!--
+     --><span>موثّق ميدانيًا <b class="mq-block"></b> الأسبق معرفةً <b class="mq-block"></b> مباشرةً إلى صنّاع القرار <b class="mq-block"></b> موثّق ميدانيًا <b class="mq-block"></b> الأسبق معرفةً <b class="mq-block"></b> مباشرةً إلى صنّاع القرار <b class="mq-block"></b> </span>
+      </div>
+    </div>
+
+    <!-- ============ PLATFORM (light) ============ -->
+    <section class="platform section--light" id="platform">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow--dark fade-up"><span class="idx">01</span> المنصة</p>
+          <h2 class="h2 split-dark">
+            <span class="line split">الأسبق معرفةً.</span>
+            <span class="line split">الأكثر دقّةً.</span>
+            <span class="line split muted-line">ذكاء قطاع</span>
+            <span class="line split muted-line">الإنشاءات.</span>
+          </h2>
+          <p class="section-sub fade-up">
+            مشاريع إنشائية لحظية، وخرائط كاملة لأصحاب المصلحة، وتواصل مباشر — في واجهة واحدة أنيقة. لا جمعَ آليًا للبيانات، لا تخمين، لا وسطاء.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- infinite project-card slider: drifts left, scroll speeds it up -->
+      <div class="pslider" aria-hidden="true">
+        <div class="pslider__track" id="psliderTrack">
+
+          <article class="scard">
+            <span class="scard__photo">
+              <img src="../assets/photos/p03.jpg" alt="" loading="lazy">
+              <b class="scard__score"><svg viewBox="0 0 10 10" width="9" height="9" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.5</b>
+              <span class="scard__acts">
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+              </span>
+            </span>
+            <span class="scard__body">
+              <em>الرعاية الصحية والمستشفيات</em>
+              <strong>آيكونيك ريزيدنس من ميرد / قطعة 382077</strong>
+              <span class="scard__addr">الإمارات &ndash; دبي &ndash; 67CP+H4Q &ndash; شارع الشيخ زايد &ndash; المركز التجاري الثانية</span>
+              <span class="scard__money"><b>$1.2M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$8.5M</b> إجمالي</span>
+              <span class="scard__chips">
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2 10.5L5.5 7l2.3 2.3L12 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.8 5H12v3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>50%</b>
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2.5 7.5l3.1 3.1 5.9-7.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>تخطيط</b>
+              </span>
+            </span>
+          </article>
+
+          <article class="scard">
+            <span class="scard__photo">
+              <img src="../assets/photos/p07.jpg" alt="" loading="lazy">
+              <b class="scard__score"><svg viewBox="0 0 10 10" width="9" height="9" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.1</b>
+              <span class="scard__acts">
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+              </span>
+            </span>
+            <span class="scard__body">
+              <em>سكني ومتعدد الاستخدامات</em>
+              <strong>مارينا جيت ووترفرونت / قطعة 194502</strong>
+              <span class="scard__addr">الإمارات &ndash; دبي &ndash; 58QF+W2M &ndash; دبي مارينا &ndash; الصفوح الثانية</span>
+              <span class="scard__money"><b>$2.4M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$14M</b> إجمالي</span>
+              <span class="scard__chips">
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2 10.5L5.5 7l2.3 2.3L12 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.8 5H12v3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>35%</b>
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2.5 7.5l3.1 3.1 5.9-7.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>تصميم</b>
+              </span>
+            </span>
+          </article>
+
+          <article class="scard">
+            <span class="scard__photo">
+              <img src="../assets/photos/p11.jpg" alt="" loading="lazy">
+              <b class="scard__score"><svg viewBox="0 0 10 10" width="9" height="9" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>8.8</b>
+              <span class="scard__acts">
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+              </span>
+            </span>
+            <span class="scard__body">
+              <em>الرعاية الصحية والمستشفيات</em>
+              <strong>مجمع الخليج التجاري الطبي / قطعة 118246</strong>
+              <span class="scard__addr">الإمارات &ndash; دبي &ndash; 62JR+8C5 &ndash; الخليج التجاري &ndash; منطقة برج خليفة</span>
+              <span class="scard__money"><b>$860K</b> ذات صلة &nbsp;&middot;&nbsp; <b>$6.2M</b> إجمالي</span>
+              <span class="scard__chips">
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2 10.5L5.5 7l2.3 2.3L12 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.8 5H12v3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>65%</b>
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2.5 7.5l3.1 3.1 5.9-7.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>مناقصة</b>
+              </span>
+            </span>
+          </article>
+
+          <article class="scard">
+            <span class="scard__photo">
+              <img src="../assets/photos/p01.jpg" alt="" loading="lazy">
+              <b class="scard__score"><svg viewBox="0 0 10 10" width="9" height="9" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.3</b>
+              <span class="scard__acts">
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+              </span>
+            </span>
+            <span class="scard__body">
+              <em>الضيافة والمنتجعات</em>
+              <strong>أبراج بوابة النخلة / قطعة 227831</strong>
+              <span class="scard__addr">الإمارات &ndash; دبي &ndash; 4XVC+Q7J &ndash; نخلة جميرا &ndash; منطقة الجذع</span>
+              <span class="scard__money"><b>$3.1M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$22M</b> إجمالي</span>
+              <span class="scard__chips">
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2 10.5L5.5 7l2.3 2.3L12 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.8 5H12v3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>20%</b>
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2.5 7.5l3.1 3.1 5.9-7.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>تخطيط</b>
+              </span>
+            </span>
+          </article>
+
+          <article class="scard">
+            <span class="scard__photo">
+              <img src="../assets/photos/p14.jpg" alt="" loading="lazy">
+              <b class="scard__score"><svg viewBox="0 0 10 10" width="9" height="9" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>8.6</b>
+              <span class="scard__acts">
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+              </span>
+            </span>
+            <span class="scard__body">
+              <em>الصناعة والخدمات اللوجستية</em>
+              <strong>مركز الفرجان اللوجستي / قطعة 305114</strong>
+              <span class="scard__addr">الإمارات &ndash; دبي &ndash; 3W8M+F6P &ndash; الفرجان &ndash; منطقة جبل علي</span>
+              <span class="scard__money"><b>$540K</b> ذات صلة &nbsp;&middot;&nbsp; <b>$3.8M</b> إجمالي</span>
+              <span class="scard__chips">
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2 10.5L5.5 7l2.3 2.3L12 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.8 5H12v3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>80%</b>
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2.5 7.5l3.1 3.1 5.9-7.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>إنشاء</b>
+              </span>
+            </span>
+          </article>
+
+          <article class="scard">
+            <span class="scard__photo">
+              <img src="../assets/photos/p05.jpg" alt="" loading="lazy">
+              <b class="scard__score"><svg viewBox="0 0 10 10" width="9" height="9" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.0</b>
+              <span class="scard__acts">
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13.6C4.6 11.3 2 9 2 6.3 2 4.4 3.5 3 5.2 3 6.4 3 7.4 3.6 8 4.6 8.6 3.6 9.6 3 10.8 3 12.5 3 14 4.4 14 6.3c0 2.7-2.6 5-6 7.3z" fill="#E0483E"/></svg></i>
+                <i class="scard__act"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg></i>
+              </span>
+            </span>
+            <span class="scard__body">
+              <em>التجزئة والتجاري</em>
+              <strong>مول مجتمع قرية جميرا / قطعة 261903</strong>
+              <span class="scard__addr">الإمارات &ndash; دبي &ndash; 5X2H+3RQ &ndash; قرية جميرا &ndash; المنطقة 12</span>
+              <span class="scard__money"><b>$1.7M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$9.4M</b> إجمالي</span>
+              <span class="scard__chips">
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2 10.5L5.5 7l2.3 2.3L12 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.8 5H12v3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>45%</b>
+                <b><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2.5 7.5l3.1 3.1 5.9-7.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>تصميم</b>
+              </span>
+            </span>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="container sec-cta fade-up">
+        <a class="btn btn--solid btn--lg magnetic" href="auth.html">احصل على 10 مشاريع مجانًا
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <p class="sec-cta__trust">لا حاجة لبطاقة ائتمان &nbsp;&middot;&nbsp; وصول فوري</p>
+      </div>
+    </section>
+
+    <!-- ============ TENDERS (dark) ============ -->
+    <section class="tenders" id="tenders">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow fade-up"><span class="idx">02</span> نطاق المناقصات</p>
+          <h2 class="h2">
+            <span class="line split">اطّلع على نطاق المناقصات</span>
+            <span class="line split">وطلبات <em class="accent-italic">RFQ</em> في المشاريع.</span>
+          </h2>
+          <p class="section-sub fade-up">
+            اعرف ما يشتريه كل مشروع، وبأي كميات، ووفق أي مواصفات — مع وصول مباشر إلى جميع مستندات المناقصة ذات الصلة.
+          </p>
+        </div>
+      </div>
+
+      <!-- project page deep-dive: guided highlight tour -->
+      <div class="container ppage-wrap">
+        <div class="ppage-scale">
+        <div class="ppage" aria-hidden="true">
+          <div class="ppage__crumbs">
+            <svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M1.5 4a1.5 1.5 0 0 1 1.5-1.5h2.6l1.4 1.7h4A1.5 1.5 0 0 1 12.5 5.7v4.8A1.5 1.5 0 0 1 11 12H3a1.5 1.5 0 0 1-1.5-1.5V4z" stroke="currentColor" stroke-width="1.3"/></svg>
+            المشاريع <em>&rsaquo;</em> <span>آيكونيك ريزيدنس من ميرد &ndash; شارع الشيخ زايد &ndash; قطعة 382077</span>
+          </div>
+          <div class="ppage__grid">
+
+            <div class="ppage__left">
+              <div class="ppage__photo">
+                <img src="../assets/photos/p03.jpg" alt="" loading="lazy">
+                <b class="ppage__score"><svg viewBox="0 0 10 10" width="9" height="9" fill="none"><path d="M1.5 9V5.5M5 9V1.5M8.5 9V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9.5</b>
+                <span class="ppage__pnav ppage__pnav--l">&lsaquo;</span>
+                <span class="ppage__pnav ppage__pnav--r">&rsaquo;</span>
+              </div>
+              <div class="ppage__thumbs">
+                <span class="is-on"><img src="../assets/photos/p03.jpg" alt="" loading="lazy"></span>
+                <span><img src="../assets/photos/p10.jpg" alt="" loading="lazy"></span>
+                <span><img src="../assets/photos/p13.jpg" alt="" loading="lazy"></span>
+                <span><img src="../assets/photos/p02.jpg" alt="" loading="lazy"></span>
+                <span class="ppage__more">&rarr;</span>
+              </div>
+              <div class="ppage__map">
+                <svg viewBox="0 0 560 250" preserveAspectRatio="xMidYMid slice">
+                  <rect width="560" height="250" fill="#1C1C1A"/>
+                  <g stroke="#33332F" stroke-width="2" fill="none">
+                    <path d="M-10 190 C120 150 240 170 340 120 S520 60 570 40"/>
+                    <path d="M-10 120 C100 110 200 140 320 170 S480 230 570 210"/>
+                    <path d="M60 260 C90 180 130 120 180 20"/>
+                    <path d="M300 260 C320 180 330 120 360 -10"/>
+                    <path d="M430 260 C450 170 460 100 500 -10"/>
+                  </g>
+                  <g stroke="#2A2A26" stroke-width="1.2" fill="none">
+                    <path d="M-10 70 H570 M-10 230 H570 M140 -10 V260 M240 -10 V260 M400 -10 V260"/>
+                  </g>
+                  <circle cx="120" cy="80" r="2.5" fill="#4A4A45"/><circle cx="330" cy="60" r="2.5" fill="#4A4A45"/>
+                  <circle cx="430" cy="150" r="2.5" fill="#4A4A45"/><circle cx="210" cy="210" r="2.5" fill="#4A4A45"/>
+                  <text x="466" y="34" fill="#75746C" font-size="13" letter-spacing="1">Дубай</text>
+                </svg>
+                <span class="ppage__pin"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2a7.4 7.4 0 0 0-7.4 7.4C4.6 14.9 12 22 12 22s7.4-7.1 7.4-12.6A7.4 7.4 0 0 0 12 2z" fill="#FBBB21"/><circle cx="12" cy="9.4" r="2.6" fill="#10100F"/></svg></span>
+                <span class="ppage__expand"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M8.5 1.5h4v4M5.5 12.5h-4v-4M12.5 1.5L8 6M1.5 12.5L6 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+              </div>
+            </div>
+
+            <div class="ppage__right">
+              <div class="ppage__idrow">
+                <span class="ppage__id"><em>ID</em>&nbsp;&nbsp;AE-B25-20320</span>
+                <span class="ppage__act ppage__act--dark">أضف إلى المفضلة <svg viewBox="0 0 16 16" width="12" height="12" fill="none"><path d="M8 13.2C4.8 11 2.4 8.9 2.4 6.4 2.4 4.6 3.8 3.3 5.4 3.3c1.1 0 2 .55 2.6 1.5.6-.95 1.5-1.5 2.6-1.5 1.6 0 3 1.3 3 3.1 0 2.5-2.4 4.6-5.6 6.8z" stroke="currentColor" stroke-width="1.3"/></svg></span>
+                <span class="ppage__act">فعّل الإشعارات <svg viewBox="0 0 16 16" width="12" height="12" fill="none"><path d="M8 2a4 4 0 0 0-4 4v3l-1.2 2.2h10.4L12 9V6a4 4 0 0 0-4-4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6.6 13.4a1.5 1.5 0 0 0 2.8 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+              </div>
+              <h3 class="ppage__title">آيكونيك ريزيدنس من ميرد &ndash; شارع الشيخ زايد &ndash; قطعة 382077</h3>
+              <p class="ppage__addr">452C+C47 &ndash; الصفوح &ndash; مدينة دبي للإنترنت &ndash; دبي &ndash; الإمارات العربية المتحدة</p>
+
+              <div class="ppage__facts">
+                <div class="ppage__fact"><span>الحالة</span><b>إنشاء</b></div>
+                <div class="ppage__fact"><span>القطاع</span><b>سكني وشقق، ناطحات سحاب</b></div>
+                <div class="ppage__fact" id="ppValue"><span>القيمة</span><b><span id="ppValueNum">164,000,000.00 USD</span> <i class="ppage__q">?</i></b></div>
+                <div class="ppage__fact"><span>الكتيّب</span><b>متاح <svg viewBox="0 0 16 16" width="13" height="13" fill="none"><path d="M1.5 8S4 3.8 8 3.8 14.5 8 14.5 8 12 12.2 8 12.2 1.5 8 1.5 8z" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.3"/></svg></b></div>
+                <div class="ppage__fact"><span>آخر تحديث</span><b>01 أكتوبر 2025</b></div>
+                <div class="ppage__fact" id="ppProgress"><span>الإنجاز</span><b><span id="ppProgressNum">50%</span></b></div>
+              </div>
+
+              <div class="ppage__panel" id="ppTender">
+                <div class="ppage__tabs">
+                  <span id="ppDeveloper">المطوّر</span><span>الاستشاري</span><span id="ppContractor">المقاول</span><span class="is-on" id="ppTabTender">المناقصة</span><span>المساعدة</span><span>المساهمة</span>
+                </div>
+                <div class="ppage__views">
+                <div class="ppage__view is-current" data-view="tender">
+                <div class="ppage__tiles">
+                  <div><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2 3.5h10M2 7h10M2 10.5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>الإجمالي</span><b>60</b></div>
+                  <div><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>نشطة</span><b>45</b></div>
+                  <div><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M7 2.5v6M7 11.2v.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>منتهية</span><b>4</b></div>
+                  <div><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M9.5 2.5l2 2L5 11l-2.6.6L3 9l6.5-6.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>مسودة</span><b>10</b></div>
+                  <div><svg viewBox="0 0 14 14" width="12" height="12" fill="none"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>ملغاة</span><b>1</b></div>
+                </div>
+                <span class="ppage__btn">انتقل إلى صفحة المناقصة</span>
+                </div>
+
+                <div class="ppage__view" data-view="developer">
+                  <div class="ppage__stake">
+                    <span class="ppage__ava">M</span>
+                    <span class="ppage__stakebody"><b>Mered Development LLC</b><span>Developer &middot; Dubai, UAE &middot; 14 active projects</span></span>
+                    <em class="ppage__vchip"><svg viewBox="0 0 12 12" width="10" height="10" fill="none"><path d="M2 6.2l2.6 2.6L10 3.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</em>
+                  </div>
+                  <div class="ppage__stake">
+                    <span class="ppage__ava ppage__ava--p">SN</span>
+                    <span class="ppage__stakebody"><b>Sara Al Naqbi</b><span>Procurement Director</span></span>
+                    <span class="ppage__cchip"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M3 2h2.5l1 2.8-1.6 1.2a9 9 0 0 0 3.1 3.1L9.2 7.5 12 8.5V11a1 1 0 0 1-1.1 1A10.4 10.4 0 0 1 2 3.1 1 1 0 0 1 3 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>+971 4 &middot;&middot;&middot; &middot;&middot; &middot;&middot;</span>
+                    <span class="ppage__cchip"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><rect x="1.5" y="3" width="11" height="8.5" rx="1.2" stroke="currentColor" stroke-width="1.3"/><path d="M2 4l5 4 5-4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Show email</span>
+                  </div>
+                </div>
+
+                <div class="ppage__view" data-view="contractor">
+                  <div class="ppage__stake">
+                    <span class="ppage__ava">A</span>
+                    <span class="ppage__stakebody"><b>ALEC Engineering &amp; Contracting</b><span>Main contractor &middot; appointed 09/2025</span></span>
+                    <em class="ppage__vchip"><svg viewBox="0 0 12 12" width="10" height="10" fill="none"><path d="M2 6.2l2.6 2.6L10 3.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</em>
+                  </div>
+                  <div class="ppage__stake">
+                    <span class="ppage__ava ppage__ava--p">RK</span>
+                    <span class="ppage__stakebody"><b>Rajesh Kumar</b><span>المدير التجاري</span></span>
+                    <span class="ppage__cchip"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><path d="M3 2h2.5l1 2.8-1.6 1.2a9 9 0 0 0 3.1 3.1L9.2 7.5 12 8.5V11a1 1 0 0 1-1.1 1A10.4 10.4 0 0 1 2 3.1 1 1 0 0 1 3 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>+971 4 &middot;&middot;&middot; &middot;&middot; &middot;&middot;</span>
+                    <span class="ppage__cchip"><svg viewBox="0 0 14 14" width="11" height="11" fill="none"><rect x="1.5" y="3" width="11" height="8.5" rx="1.2" stroke="currentColor" stroke-width="1.3"/><path d="M2 4l5 4 5-4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Show email</span>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="ppage__panel ppage__timeline" id="ppTimeline">
+                <h4>الجدول الزمني</h4>
+                <div class="ppage__years"><span>2025</span><b>2026</b><span>2027</span></div>
+                <div class="ppage__track"><i></i></div>
+                <ul class="ppage__events">
+                  <li><span>ديسمبر 2025</span><b>تم تركيب لوحة المشروع</b></li>
+                  <li><span>نوفمبر 2025</span><b>أعمال التمهيد جارية</b></li>
+                  <li><span>أكتوبر 2025</span><b>توريد حديد التسليح لأعمال الأساسات</b></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- guided tour spotlight -->
+          <div class="ppage__spot" id="ppSpot"><span class="ppage__spotlabel"><b id="ppSpotStep">01/06</b><em id="ppSpotLabel">Timeline</em></span></div>
+        </div>
+        </div>
+      </div>
+
+      <div class="trows">
+        <a class="trow fade-up" href="auth.html">
+          <div class="container trow__inner">
+            <span class="trow__num">01</span>
+            <div class="trow__body">
+              <h3 class="trow__title">اعرف بدقة ما يشتريه المشروع</h3>
+              <p class="trow__text">نطاقات مناقصات مفصّلة ومتطلبات مُبنَّدة — فئات المنتجات والمواصفات الفنية وشروط التسليم.</p>
+            </div>
+            <span class="trow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4v12" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="trow fade-up" href="auth.html">
+          <div class="container trow__inner">
+            <span class="trow__num">02</span>
+            <div class="trow__body">
+              <h3 class="trow__title">كميات ومواصفات بلا تخمين</h3>
+              <p class="trow__text">سعّر وفق كميات مستخرجة من مستندات المشروع نفسه — لا من متوسطات السوق العامة.</p>
+            </div>
+            <span class="trow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4v12" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="trow fade-up" href="auth.html">
+          <div class="container trow__inner">
+            <span class="trow__num">03</span>
+            <div class="trow__body">
+              <h3 class="trow__title">وصول مباشر إلى مستندات المناقصات</h3>
+              <p class="trow__text">افتح ملفات RFQ وجداول الكميات BOQ والمخططات والملفات الفنية من المنصة مباشرة — جاهزة لفرقك التجارية والفنية.</p>
+            </div>
+            <span class="trow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 20L20 4M20 4H8M20 4v12" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="container sec-cta fade-up">
+        <a class="btn btn--solid btn--lg magnetic" href="auth.html">احصل على 10 مشاريع مجانًا
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <p class="sec-cta__trust">لا حاجة لبطاقة ائتمان &nbsp;&middot;&nbsp; وصول فوري</p>
+      </div>
+    </section>
+
+    <!-- ============ VALUE CHAIN (yellow) ============ -->
+    <section class="value section--accent" id="value">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow--dark fade-up"><span class="idx">03</span> لمن هذه المنصة</p>
+          <h2 class="h2">
+            <span class="line split">مصمَّمة لكل أطراف</span>
+            <span class="line split">سلسلة القيمة.</span>
+          </h2>
+          <p class="section-sub fade-up">
+            تمنح BLOCS-ME المشترين والبائعين ذكاء المشاريع الذي يحتاجونه ليجد كلٌّ منهما الآخر — ولإتمام الأعمال أسرع.
+          </p>
+        </div>
+
+        <div class="value__grid">
+          <div class="vcol fade-up">
+            <span class="vcol__eyebrow">للمشترين</span>
+            <h3 class="vcol__title">المشترون</h3>
+            <p class="vcol__text">شاهد المورّدين النشطين في المشاريع الجارية وادعُ الأنسب منهم.</p>
+            <div class="vcol__chips">
+              <b>المطوّرون</b><b>الاستشاريون</b><b>المقاولون الرئيسيون</b><b>مالكو المشاريع</b><b>الجهات الحكومية</b>
+            </div>
+          </div>
+          <div class="vcol fade-up">
+            <span class="vcol__eyebrow">للبائعين</span>
+            <h3 class="vcol__title">البائعون</h3>
+            <p class="vcol__text">اعثر على المشاريع الجارية ضمن نطاق عملك وتواصل مع صنّاع القرار الحقيقيين مبكرًا.</p>
+            <div class="vcol__chips">
+              <b>المصنّعون</b><b>المقاولون المتخصصون</b><b>مزوّدو الخدمات</b><b>المورّدون</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D supply-routes map: India / China / Bangladesh / GCC → Dubai -->
+        <div class="geo fade-up" role="img" aria-label="Supply routes from India, China, Bangladesh and the GCC converging on Dubai">
+          <div class="geo__tilt">
+            <div class="geo__head">
+              <span class="geo__tag"><i></i>مسارات توريد مباشرة</span>
+              <span class="geo__legend">الهند &middot; الصين &middot; بنغلاديش &middot; الخليج &nbsp;&larr;&nbsp; دبي</span>
+            </div>
+            <svg class="geo__map" id="geoMap" viewBox="0 0 1000 560" aria-hidden="true">
+              <defs>
+                <radialGradient id="geoHub" cx=".5" cy=".5" r=".5">
+                  <stop offset="0" stop-color="#FBBB21" stop-opacity=".26"/>
+                  <stop offset="1" stop-color="#FBBB21" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <!-- simplified landmasses: faint fill + hit-shapes for the dot matrix -->
+              <g id="geoLand" fill="#171714">
+                <path fill-rule="evenodd" d="M0 0 L1000 0 L1000 114 L966 102 L942 116 L924 121 L932 133 L939 139 L975 141 L974 147 L945 161 L942 174 L957 190 L967 207 L958 218 L965 230 L946 253 L927 283 L912 300 L887 308 L877 314 L861 318 L846 323 L841 319 L826 317 L808 327 L799 343 L797 352 L806 366 L821 381 L833 399 L835 419 L825 435 L806 446 L789 457 L777 444 L771 431 L762 426 L754 420 L745 411 L739 410 L736 422 L732 438 L728 454 L733 467 L743 479 L760 491 L769 506 L775 526 L773 544 L751 529 L740 506 L734 488 L724 472 L721 449 L714 426 L712 401 L713 377 L697 380 L687 384 L680 379 L677 356 L668 343 L660 332 L654 323 L651 308 L640 314 L635 316 L626 315 L616 318 L598 327 L584 337 L569 353 L557 366 L543 377 L532 382 L527 404 L525 423 L524 441 L515 456 L505 464 L499 469 L489 456 L484 439 L476 420 L467 398 L460 374 L452 352 L448 337 L449 324 L443 315 L432 326 L422 326 L411 314 L409 304 L400 298 L394 290 L388 281 L374 278 L356 278 L335 279 L316 276 L295 273 L286 267 L283 258 L276 256 L263 260 L251 261 L240 253 L227 248 L218 235 L205 225 L196 223 L191 231 L194 240 L202 251 L212 262 L213 270 L216 276 L219 281 L222 273 L223 268 L227 270 L227 280 L225 286 L236 289 L249 290 L257 287 L262 282 L266 276 L273 271 L275 268 L278 265 L278 272 L277 280 L283 289 L293 293 L302 297 L311 306 L314 311 L305 325 L294 337 L280 351 L266 360 L254 370 L241 376 L224 388 L203 395 L188 403 L167 413 L158 417 L142 418 L139 404 L135 390 L134 372 L124 357 L114 339 L101 326 L95 308 L88 292 L77 279 L69 262 L60 248 L52 231 L49 240 L45 249 L38 242 L32 233 L25 225 L25 212 L39 211 L47 207 L53 196 L59 183 L62 169 L62 157 L53 152 L39 155 L21 156 L6 150 L0 148 Z M196 48 L221 37 L242 39 L244 56 L237 78 L247 90 L252 99 L247 114 L251 129 L247 143 L232 147 L216 147 L202 140 L197 129 L194 114 L184 95 L179 78 L184 58 Z"/>
+                <path d="M0 211 L11 207 L24 209 L25 225 L27 235 L37 249 L47 262 L58 283 L73 307 L78 327 L91 349 L102 372 L105 386 L121 399 L133 411 L139 424 L151 431 L168 438 L187 436 L205 431 L219 427 L225 428 L218 444 L205 464 L187 487 L166 512 L145 538 L128 560 L0 560 Z"/>
+                <path d="M526 450 L536 458 L542 466 L546 478 L542 489 L533 494 L526 488 L524 476 L523 461 Z"/>
+              </g>
+
+              <g id="geoDots"></g>
+
+              <ellipse cx="266" cy="278" rx="96" ry="64" fill="url(#geoHub)"/>
+
+              <!-- thin routes, all ending in Dubai (266,278) -->
+              <g fill="none" stroke="#FBBB21" stroke-width="1.1" stroke-linecap="round" opacity=".8">
+                <path class="geo-arc" d="M176 283 Q221 252 266 278"/>
+                <path class="geo-arc" d="M226 277 Q246 262 266 278"/>
+                <path class="geo-arc" d="M189 231 Q222 230 266 278"/>
+                <path class="geo-arc" d="M97 319 Q178 250 266 278"/>
+                <path class="geo-arc" d="M451 346 Q352 252 266 278"/>
+                <path class="geo-arc" d="M497 240 Q374 185 266 278"/>
+                <path class="geo-arc" d="M501 414 Q374 262 266 278"/>
+                <path class="geo-arc" d="M636 293 Q443 175 266 278"/>
+                <path class="geo-arc" d="M963 211 Q596 55 266 278"/>
+                <path class="geo-arc" d="M885 308 Q558 120 266 278"/>
+                <path class="geo-arc" d="M909 113 Q565 20 266 278"/>
+                <path class="geo-arc" d="M779 217 Q507 95 266 278"/>
+                <path class="geo-arc" d="M152 187 Q200 208 266 278"/>
+                <path class="geo-arc" d="M168 28 Q205 120 266 278"/>
+                <path class="geo-arc" d="M413 97 Q325 140 266 278"/>
+                <path class="geo-arc" d="M494 76 Q360 115 266 278"/>
+              </g>
+
+              <g id="geoPulses"></g>
+
+              <g id="geoCities">
+                <!-- sources -->
+                <g class="geo-src"><circle cx="176" cy="283" r="2.6"/><circle class="geo-src__ring" cx="176" cy="283" r="6"/></g>
+                <g class="geo-src"><circle cx="226" cy="277" r="2.6"/><circle class="geo-src__ring" cx="226" cy="277" r="6"/></g>
+                <g class="geo-src"><circle cx="189" cy="231" r="2.6"/><circle class="geo-src__ring" cx="189" cy="231" r="6"/></g>
+                <g class="geo-src"><circle cx="97" cy="319" r="2.6"/><circle class="geo-src__ring" cx="97" cy="319" r="6"/></g>
+                <g class="geo-src"><circle cx="451" cy="346" r="2.6"/><circle class="geo-src__ring" cx="451" cy="346" r="6"/></g>
+                <g class="geo-src"><circle cx="497" cy="240" r="2.6"/><circle class="geo-src__ring" cx="497" cy="240" r="6"/></g>
+                <g class="geo-src"><circle cx="501" cy="414" r="2.6"/><circle class="geo-src__ring" cx="501" cy="414" r="6"/></g>
+                <g class="geo-src"><circle cx="636" cy="293" r="2.6"/><circle class="geo-src__ring" cx="636" cy="293" r="6"/></g>
+                <g class="geo-src"><circle cx="963" cy="211" r="2.6"/><circle class="geo-src__ring" cx="963" cy="211" r="6"/></g>
+                <g class="geo-src"><circle cx="885" cy="308" r="2.6"/><circle class="geo-src__ring" cx="885" cy="308" r="6"/></g>
+                <g class="geo-src"><circle cx="909" cy="113" r="2.6"/><circle class="geo-src__ring" cx="909" cy="113" r="6"/></g>
+                <g class="geo-src"><circle cx="779" cy="217" r="2.6"/><circle class="geo-src__ring" cx="779" cy="217" r="6"/></g>
+                <g class="geo-src"><circle cx="152" cy="187" r="2.6"/><circle class="geo-src__ring" cx="152" cy="187" r="6"/></g>
+                <g class="geo-src"><circle cx="168" cy="28" r="2.6"/><circle class="geo-src__ring" cx="168" cy="28" r="6"/></g>
+                <g class="geo-src"><circle cx="413" cy="97" r="2.6"/><circle class="geo-src__ring" cx="413" cy="97" r="6"/></g>
+                <g class="geo-src"><circle cx="494" cy="76" r="2.6"/><circle class="geo-src__ring" cx="494" cy="76" r="6"/></g>
+
+                <!-- region labels -->
+                <text x="130" y="352">الخليج</text>
+                <text x="516" y="336">الهند</text>
+                <text x="652" y="278">بنغلاديش</text>
+                <text x="846" y="176">الصين</text>
+                <text x="112" y="172">العراق</text>
+                <text x="184" y="30">روسيا</text>
+                <text x="352" y="122">أوزبكستان</text>
+                <text x="508" y="66">كازاخستان</text>
+
+                <!-- Dubai hub -->
+                <circle class="geo-ring" cx="266" cy="278" r="6"/>
+                <circle class="geo-ring" cx="266" cy="278" r="6"/>
+                <circle cx="266" cy="278" r="4.6" fill="#FBBB21"/>
+                <text class="geo-hub" x="266" y="250" text-anchor="middle">دبي</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="sec-cta fade-up">
+          <a class="btn btn--dark btn--lg magnetic" href="auth.html">احصل على 10 مشاريع مجانًا
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <p class="sec-cta__trust">لا حاجة لبطاقة ائتمان &nbsp;&middot;&nbsp; وصول فوري</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS (dark) ============ -->
+    <section class="results" id="results">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow fade-up"><span class="idx">04</span> النتائج</p>
+          <h2 class="h2">
+            <span class="line split">نتائج حقيقية من فرق</span>
+            <span class="line split">إنشاءات حقيقية.</span>
+          </h2>
+          <p class="section-sub fade-up">
+            معدلات فوز أعلى، ووصول مبكر إلى المشاريع، وتدفق صفقات أكثر قابلية للتنبؤ — مباشرة من الفرق التي تستخدم BLOCS-ME يوميًا.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="cases fade-up">
+        <div class="cases-scale">
+        <div class="cases__track" id="casesTrack">
+
+              <article class="case">
+                <span class="case__photo">
+                  <img class="case__person" src="../assets/people/m1.png" alt="" loading="lazy">
+                </span>
+                <div class="case__body">
+                  <div class="case__meta">
+                    <span class="case__tag">مورّد واجهات</span>
+                    <span class="case__loc"><svg viewBox="0 0 12 12" width="10" height="10" fill="none"><path d="M6 1.2C4 1.2 2.5 2.7 2.5 4.6 2.5 7.3 6 10.8 6 10.8s3.5-3.5 3.5-6.2C9.5 2.7 8 1.2 6 1.2z" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="4.7" r="1.2" fill="currentColor"/></svg>دبي، الإمارات</span>
+                  </div>
+                  <h3 class="case__title">‏78 طلب RFQ خلال 9 أشهر</h3>
+                  <div class="case__cols">
+                    <div>
+                      <h4>الاستراتيجية</h4>
+                      <p>ركّزنا على المشاريع المتوسطة والكبيرة في الإمارات والسعودية ذات نطاق الواجهات، مستخدمين فلاتر BLOCS-ME حسب التخصص والقيمة والمرحلة للوصول مباشرة إلى الاستشاريين والمقاولين الرئيسيين المعيَّنين.</p>
+                    </div>
+                    <div>
+                      <h4>التقييم</h4>
+                      <p>قبل BLOCS-ME كنا دائمًا متأخرين. الآن نرى المشاريع المناسبة أبكر، ونعرف من المعني بها، ونتوجه مباشرة إلى المشترين الحقيقيين. إنها مصدرنا الأول للفرص المؤهَّلة.</p>
+                    </div>
+                  </div>
+                  <div class="case__minis"><span><img src="../assets/photos/p05.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p01.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p04.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p09.jpg" alt="" loading="lazy"></span></div>
+                  <div class="case__foot">
+                    <span class="case__who"><b>عمر حداد</b><span>مدير تطوير الأعمال</span></span>
+                    <a class="btn btn--dark btn--sm magnetic case__btn" href="auth.html">احصل على دراسة الحالة كاملة
+                      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case">
+                <span class="case__photo">
+                  <img class="case__person" src="../assets/people/m2.png" alt="" loading="lazy">
+                </span>
+                <div class="case__body">
+                  <div class="case__meta">
+                    <span class="case__tag">مقاول كهروميكانيك MEP</span>
+                    <span class="case__loc"><svg viewBox="0 0 12 12" width="10" height="10" fill="none"><path d="M6 1.2C4 1.2 2.5 2.7 2.5 4.6 2.5 7.3 6 10.8 6 10.8s3.5-3.5 3.5-6.2C9.5 2.7 8 1.2 6 1.2z" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="4.7" r="1.2" fill="currentColor"/></svg>دبي مارينا، الإمارات</span>
+                  </div>
+                  <h3 class="case__title">الفوز بثلاث مناقصات بقيمة 4.2 مليون دولار في ربع واحد</h3>
+                  <div class="case__cols">
+                    <div>
+                      <h4>الاستراتيجية</h4>
+                      <p>تابعنا أبراج الخليج التجاري والمارينا في مرحلة المناقصة، وحمّلنا جداول الكميات والمخططات يوم صدورها، وسعّرنا وفق كميات حقيقية لا تقديرات.</p>
+                    </div>
+                    <div>
+                      <h4>التقييم</h4>
+                      <p>نقدّم عروضنا قبل أن يسمع المنافسون بالمشروع أصلًا. الوصول إلى جداول الكميات وحده يغطي قيمة الاشتراك — ففريق التسعير لدينا يعمل عليها يوميًا.</p>
+                    </div>
+                  </div>
+                  <div class="case__minis"><span><img src="../assets/photos/p08.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p10.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p12.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p15.jpg" alt="" loading="lazy"></span></div>
+                  <div class="case__foot">
+                    <span class="case__who"><b>كيفن تان</b><span>Commercial Director</span></span>
+                    <a class="btn btn--dark btn--sm magnetic case__btn" href="auth.html">احصل على دراسة الحالة كاملة
+                      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case">
+                <span class="case__photo">
+                  <img class="case__person" src="../assets/people/m3.png" alt="" loading="lazy">
+                </span>
+                <div class="case__body">
+                  <div class="case__meta">
+                    <span class="case__tag">مصنّع مواد بناء</span>
+                    <span class="case__loc"><svg viewBox="0 0 12 12" width="10" height="10" fill="none"><path d="M6 1.2C4 1.2 2.5 2.7 2.5 4.6 2.5 7.3 6 10.8 6 10.8s3.5-3.5 3.5-6.2C9.5 2.7 8 1.2 6 1.2z" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="4.7" r="1.2" fill="currentColor"/></svg>الدوحة، قطر</span>
+                  </div>
+                  <h3 class="case__title">نمو خط الفرص 4 أضعاف خلال 6 أشهر</h3>
+                  <div class="case__cols">
+                    <div>
+                      <h4>الاستراتيجية</h4>
+                      <p>فعّلنا تنبيهات لمشاريع مرحلة التخطيط المطابقة لخطوط منتجاتنا، وتواصلنا مع الاستشاريين قبل المناقصة لتثبيت المواصفات مبكرًا في الإمارات والسعودية وقطر.</p>
+                    </div>
+                    <div>
+                      <h4>التقييم</h4>
+                      <p>انتهت الاتصالات الباردة. كل محادثة تبدأ بمشروع قائم ومشترٍ محدَّد بالاسم ونطاق حقيقي — مندوبونا يعملون الآن على الفرص المؤهَّلة فقط.</p>
+                    </div>
+                  </div>
+                  <div class="case__minis"><span><img src="../assets/photos/p13.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p02.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p06.jpg" alt="" loading="lazy"></span><span><img src="../assets/photos/p03.jpg" alt="" loading="lazy"></span></div>
+                  <div class="case__foot">
+                    <span class="case__who"><b>ديفيد أوكونكو</b><span>مدير المبيعات الإقليمي</span></span>
+                    <a class="btn btn--dark btn--sm magnetic case__btn" href="auth.html">احصل على دراسة الحالة كاملة
+                      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DATA PLATFORM (dark) ============ -->
+    <section class="data" id="data">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow fade-up"><span class="idx">05</span> منصة البيانات <b class="soon">قريبًا</b></p>
+          <h2 class="h2">
+            <span class="line split">حوّل بيانات الإنشاءات</span>
+            <span class="line split">إلى <em class="accent-italic">إيرادات</em> حقيقية.</span>
+          </h2>
+          <p class="section-sub fade-up">
+            اكتشف المشاريع المناسبة أولًا، وصِل إلى المشترين المناسبين بسرعة، وحوّل مزيدًا من الصفقات بجهد أقل.
+          </p>
+        </div>
+
+        <!-- live analytics dashboard -->
+        <div class="dash tilt-soft" aria-hidden="true">
+          <div class="dash__top">
+            <img class="dash__logo" src="../assets/blocs-logo.svg?v=3" alt="" draggable="false">
+            <span class="dash__tabs"><b class="is-on">نظرة عامة</b><b>خط الفرص</b><b>المناقصات</b><b>جهات الاتصال</b><b>التقارير</b></span>
+            <span class="dash__range">01 يناير &mdash; 11 يوليو <i>&#8964;</i></span>
+          </div>
+          <div class="dash__grid">
+
+            <div class="dash__card dash__funnel">
+              <div class="dash__cardhead">
+                <h5>قمع الصفقات</h5>
+                <span class="dash__live"><i></i>مباشر</span>
+              </div>
+              <div class="frow"><span>مشاريع مطابقة</span><i class="frow__bar"><b data-w="100"></b></i><em data-dnum="1248">0</em></div>
+              <div class="frow"><span>جهات تم التواصل معها</span><i class="frow__bar"><b data-w="58"></b></i><em data-dnum="486">0</em></div>
+              <div class="frow"><span>عروض مقدَّمة</span><i class="frow__bar"><b data-w="34"></b></i><em data-dnum="214">0</em></div>
+              <div class="frow frow--win"><span>مناقصات مكسوبة</span><i class="frow__bar"><b data-w="17"></b></i><em data-dnum="38">0</em></div>
+              <p class="dash__foot">التحويل الكلي <b>3.1%</b> &nbsp;&middot;&nbsp; <span class="up">&#8599; +0.8 نقطة عن الربع الماضي</span></p>
+            </div>
+
+            <div class="dash__card dash__rev">
+              <div class="dash__cardhead"><h5>الإيرادات المحققة</h5><span class="dash__chip">&#8599; 18%</span></div>
+              <p class="dash__big">$<b id="dashRev">0.00</b>M</p>
+              <div class="dash__bars" id="dashBars"></div>
+              <p class="dash__foot">مقارنة بالفترة السابقة <b>+$640K</b></p>
+            </div>
+
+            <div class="dash__card dash__mini">
+              <h5>قيمة خط الفرص</h5>
+              <p class="dash__num">$<b data-dnum="12.8" data-dfmt="dec">0</b>M</p>
+              <div class="dash__dots" data-fill="70"></div>
+              <p class="dash__foot">168 فرصة مفتوحة</p>
+            </div>
+
+            <div class="dash__card dash__mini">
+              <h5>معدل الفوز</h5>
+              <p class="dash__num"><b data-dnum="23">0</b>%</p>
+              <div class="dash__dots" data-fill="23"></div>
+              <p class="dash__foot">متوسط القطاع &middot; 9%</p>
+            </div>
+
+            <div class="dash__card dash__insight">
+              <span class="dash__itag">رؤية</span>
+              <p class="dash__inum"><b data-dnum="3.4" data-dfmt="dec">0</b>&times;</p>
+              <p class="dash__itext">أسرع من أول تواصل حتى تقديم العرض عندما يبدأ التواصل من جهات BLOCS الموثّقة.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- three value blocks -->
+        <div class="data__grid">
+          <div class="dcard fade-up">
+            <span class="dcard__num">/01</span>
+            <h3>كن الأول إلى كل مشروع</h3>
+            <p>معلومات مبكرة عن المشاريع، وجهات اتصال موثّقة، وفرص مؤهَّلة — كل ذلك في منصة واحدة.</p>
+          </div>
+          <div class="dcard fade-up">
+            <span class="dcard__num">/02</span>
+            <h3>توقّف عن البحث، وابدأ بالإغلاق.</h3>
+            <p>اكتشف المشاريع المناسبة أولًا، وصِل إلى المشترين المناسبين بسرعة، وحوّل مزيدًا من الصفقات بجهد أقل.</p>
+          </div>
+          <div class="dcard fade-up">
+            <span class="dcard__num">/03</span>
+            <h3>استهدف المشاريع الصحيحة في كل مرة</h3>
+            <p>من قوائم مشاريع خام إلى فرص جاهزة للإغلاق — للمورّدين والمقاولين والمصنّعين.</p>
+          </div>
+        </div>
+
+        <div class="sec-cta fade-up">
+          <a class="btn btn--solid btn--lg magnetic" href="auth.html">احصل على 10 مشاريع مجانًا
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <p class="sec-cta__trust">لا حاجة لبطاقة ائتمان &nbsp;&middot;&nbsp; وصول فوري</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq" id="faq">
+      <div class="container faq__grid">
+        <div class="faq__head">
+          <p class="eyebrow fade-up"><span class="idx">06</span> الأسئلة الشائعة</p>
+          <h2 class="h2 h2--sm">
+            <span class="line split">الأسئلة</span>
+            <span class="line split">الشائعة.</span>
+          </h2>
+          <p class="section-sub fade-up">كل ما تريد معرفته عن اكتشاف المشاريع وجهات الاتصال والمناقصات مبكرًا مع BLOCS-ME.</p>
+        </div>
+
+        <div class="faq__list">
+          <div class="faq__item fade-up">
+            <button class="faq__q" aria-expanded="false">
+              <span>بمَ تختلف BLOCS-ME عن قواعد بيانات المشاريع الأخرى؟</span>
+              <i class="faq__icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq__a"><div class="faq__a-inner">
+              <p>معظم قواعد البيانات تجمع بياناتها آليًا من مصادر عامة، أما نحن فلا. أكثر من 160 باحثًا يتحققون ميدانيًا من كل مشروع — ولهذا تظهر بياناتنا أبكر بثلاثة أسابيع، وتأتي مع تواصل مباشر مع صنّاع القرار، لا مجرد أسماء شركات.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item fade-up">
+            <button class="faq__q" aria-expanded="false">
+              <span>ما الدول التي تغطونها؟</span>
+              <i class="faq__icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq__a"><div class="faq__a-inner">
+              <p>سبعة أسواق في الشرق الأوسط: الإمارات والسعودية وقطر وعُمان والكويت والبحرين ومصر — مع فرق بحث متخصصة في كل دولة.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item fade-up">
+            <button class="faq__q" aria-expanded="false">
+              <span>كم مرة تُحدَّث البيانات؟</span>
+              <i class="faq__icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq__a"><div class="faq__a-inner">
+              <p>باستمرار. تضيف فرقنا أكثر من 150 مشروعًا جديدًا يوميًا، وتعيد التحقق من السجلات القائمة بدورة متجددة، لتبقى الحالات والمراحل وجهات الاتصال محدَّثة.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item fade-up">
+            <button class="faq__q" aria-expanded="false">
+              <span>ما مدى حداثة بياناتكم؟</span>
+              <i class="faq__icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq__a"><div class="faq__a-inner">
+              <p>يعرض كل سجل تاريخ آخر تحقق منه. الغالبية العظمى من المشاريع النشطة أُعيد فحصها خلال آخر 30 يومًا — ويُشار إلى أي تغيير فور حدوثه.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item fade-up">
+            <button class="faq__q" aria-expanded="false">
+              <span>كم يستغرق البدء؟</span>
+              <i class="faq__icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq__a"><div class="faq__a-inner">
+              <p>في اليوم نفسه. احجز عرضًا تجريبيًا وأخبرنا بتخصصك ومنطقتك، وسنجهّز مساحة عملك بمشاريع حية خلال 24 ساعة — دون إجراءات تهيئة طويلة.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="cta">
+      <div class="container">
+        <div class="cta__panel tilt-soft fade-up">
+          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot eyebrow__dot--dark"></span> جاهزون متى كنت جاهزًا</p>
+          <h2 class="cta__title">
+            <span class="line split">وصول فوري إلى أكثر من 24,000</span>
+            <span class="line split">مشروع إنشائي مُوثَّق</span>
+            <span class="line split cta__title-last">مع 9,600+ مناقصة نشطة</span>
+          </h2>
+          <p class="cta__sub">معلومات لحظية، وبيانات مشاريع موثّقة، وتواصل مباشر مع صنّاع القرار — منصة مصمَّمة للمصنّعين والمورّدين والمقاولين.</p>
+          <div class="cta__actions">
+            <a class="btn btn--dark btn--lg magnetic" href="auth.html">احصل على 10 مشاريع مجانًا
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+            </a>
+            <span class="cta__note">لا حاجة لبطاقة ائتمان &middot; وصول فوري</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="footer__logo" href="#top" aria-label="BLOCS-ME home">
+          <img class="logo-img" src="../assets/blocs-logo.svg?v=3" alt="" aria-hidden="true" draggable="false">
+        </a>
+        <p class="footer__tagline">ذكاء مشاريع الإنشاءات في الشرق الأوسط.</p>
+        <div class="socials">
+          <a class="social" href="https://www.instagram.com/blocsme/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none"><rect x="3" y="3" width="18" height="18" rx="5.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
+          </a>
+          <a class="social" href="https://www.linkedin.com/company/blocsme" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M7.6 10.4v6M7.6 7.5v.1M11.4 16.4v-3.6c0-1.3.9-2.4 2.3-2.4s2.3 1.1 2.3 2.4v3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 9.4l4.6 2.6-4.6 2.6z" fill="currentColor"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M14.8 8.2h2.4V5h-2.4a3.9 3.9 0 0 0-3.9 3.9v2H8.6v3.1h2.3V21h3.2v-7h2.5l.5-3.1h-3V9.1c0-.5.4-.9.9-.9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__col" aria-label="Footer">
+        <h4>القائمة</h4>
+        <a href="#platform">المنصة</a>
+        <a href="#tenders">المناقصات</a>
+        <a href="#results">النتائج</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+        <a href="pricing.html">الأسعار</a>
+      </nav>
+
+      <div class="footer__col">
+        <h4>مكتب دبي</h4>
+        <a href="mailto:team@blocsme.com">team@blocsme.com</a>
+        <a href="tel:+971545365363">+971 54 536 5363</a>
+        <p>Property Investment Office 4<br>Dubai Investment Park First<br>Dubai, United Arab Emirates</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>مكتب قطر</h4>
+        <a href="mailto:team@blocsme.com">team@blocsme.com</a>
+        <a href="tel:+97466433997">+974 66 433 997</a>
+        <p>Ras Abu Fontas Free Zone<br>49 Street, 504 Building 1<br>Doha, State of Qatar</p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> BLOCS-ME. ذكاء مشاريع الإنشاءات.</p>
+      <p class="footer__meta">الإمارات · السعودية · قطر · عُمان · الكويت · البحرين · مصر</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+    window.BLOCS_I18N = {
+      requestSent: "تم إرسال الطلب ✓",
+      tourStops: [
+        "الجدول الزمني — تحديثات شهرية من الموقع",
+        "المناقصات — 60 في هذا المشروع",
+        "المقاول — تواصل مباشر",
+        "المطوّر — أطراف موثّقة",
+        "الإنجاز — يُتابَع ميدانيًا",
+        "القيمة — ميزانية موثّقة"
+      ],
+      cardData: [
+        { photo: "../assets/photos/p07.jpg", cat: "سكني ومتعدد الاستخدامات", title: "مارينا جيت ووترفرونت / قطعة 194502", addr: "الإمارات – دبي – 58QF+W2M – دبي مارينا – الصفوح الثانية", money: "<b>$999K</b> ذات صلة &nbsp;&middot;&nbsp; <b>$14M</b> إجمالي", tenderName: "حزمة الواجهات والزجاج", tenderNote: "يُغلق طلب العروض خلال 9 أيام" },
+        { photo: "../assets/photos/p11.jpg", cat: "الرعاية الصحية والمستشفيات", title: "مجمع الخليج التجاري الطبي / قطعة 118246", addr: "الإمارات – دبي – 62JR+8C5 – الخليج التجاري – منطقة برج خليفة", money: "<b>$500K</b> ذات صلة &nbsp;&middot;&nbsp; <b>$6.2M</b> إجمالي", tenderName: "حزمة الأعمال الكهروميكانيكية", tenderNote: "يُغلق طلب العروض خلال 6 أيام" },
+        { photo: "../assets/photos/p03.jpg", cat: "الرعاية الصحية والمستشفيات", title: "آيكونيك ريزيدنس من ميرد / قطعة 382077", addr: "الإمارات – دبي – 67CP+H4Q – شارع الشيخ زايد – المركز التجاري الثانية", money: "<b>$1.2M</b> ذات صلة &nbsp;&middot;&nbsp; <b>$8.5M</b> إجمالي", tenderName: "توريد 1,000 باب", tenderNote: "يُغلق طلب العروض خلال 12 يومًا" }
+      ]
+    };
+  </script>
+  <script src="../js/main.js?v=21" defer></script>
+  <script type="module" src="../js/scene.js?v=21"></script>
+</body>
+</html>

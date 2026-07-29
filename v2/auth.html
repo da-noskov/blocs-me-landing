@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get 10 free projects — BLOCS-ME V2 · Ember</title>
+  <meta name="description" content="Create a free BLOCS-ME account and get instant access to 10 verified construction projects with direct stakeholder contacts. No credit card required." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='51.4231' height='51.4231' rx='16.0881' fill='url(%23g)'/%3E%3Cpath d='M41.2241 12.7376C43.4259 14.2469 43.9293 17.2852 42.3318 19.4239L32.4306 32.6796L23.3426 25.7264L30.9288 14.659C33.2412 11.2854 37.8505 10.4252 41.2241 12.7376Z' fill='black'/%3E%3Cpath d='M39.2736 38.7457C41.4481 37.2552 42.0026 34.2841 40.5121 32.1095L31.4378 18.8711L21.2938 25.8244L28.8126 36.7934C31.1622 40.2213 35.8458 41.0954 39.2736 38.7457Z' fill='black'/%3E%3Cpath d='M36.4043 11.4531L34.4678 40.0172L15.4337 40.0172C11.2231 40.0172 8.12617 36.0712 9.12692 31.9812L12.9387 16.4028C13.6497 13.497 16.254 11.4531 19.2454 11.4531L36.4043 11.4531Z' fill='black'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='25.7115' y1='0' x2='25.7115' y2='51.4231' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E93A0E'/%3E%3Cstop offset='0.45' stop-color='%23F87A1E'/%3E%3Cstop offset='1' stop-color='%23F9B233'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css?v=21" />
+  <link rel="stylesheet" href="ember.css?v=6" />
+</head>
+<body class="auth-body">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="auth">
+
+    <!-- ============ LEFT: brand / offer ============ -->
+    <section class="auth-brand">
+      <div class="auth-brand__top">
+        <a class="auth-brand__logo" href="index.html" aria-label="BLOCS-ME home">
+          <img src="logo-mono.svg?v=2" alt="" aria-hidden="true" draggable="false">
+        </a>
+        <details class="lang-dd"><summary><svg viewBox="0 0 16 16" width="13" height="13" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.3"/><path d="M1.8 8h12.4M8 1.8c-1.8 1.7-2.7 3.8-2.7 6.2s.9 4.5 2.7 6.2c1.8-1.7 2.7-3.8 2.7-6.2S9.8 3.5 8 1.8z" stroke="currentColor" stroke-width="1.3"/></svg>EN<svg class="lang-dd__chev" viewBox="0 0 10 6" width="9" height="6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="lang-dd__list"><a class="is-on" href="auth.html">English</a><a href="ar/auth.html" hreflang="ar" lang="ar">العربية</a><a href="zh/auth.html" hreflang="zh-CN" lang="zh-CN">中文</a></div></details>
+        <a class="auth-back" href="index.html">
+          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back to home
+        </a>
+      </div>
+
+      <div class="auth-brand__body">
+        <p class="auth-eyebrow" data-a="eyebrow"><i></i>Free access &middot; no credit card</p>
+
+        <h1 class="auth-title">
+          <span class="auth-line"><em>Get 10 verified projects</em></span>
+          <span class="auth-line"><em>with real tenders</em></span>
+          <span class="auth-line"><em>&amp; direct contacts.</em></span>
+          <span class="auth-line auth-line--outline"><em>Free. Today.</em></span>
+        </h1>
+
+        <ul class="auth-perks">
+          <li>10 verified projects in your trade &amp; region</li>
+          <li>Direct decision-maker contacts included</li>
+          <li>Live tenders with BOQs and drawings</li>
+          <li>Set up in under 2 minutes</li>
+        </ul>
+
+        <!-- live project feed: cards cycle in -->
+        <div class="auth-feed" aria-hidden="true">
+          <p class="auth-feed__label">Added while you read this</p>
+          <div class="auth-feed__stage" id="authFeed">
+            <div class="auth-card">
+              <span class="auth-card__pic"><img src="../assets/photos/p03.jpg" alt="" loading="lazy"></span>
+              <span class="auth-card__body">
+                <span class="auth-card__tag"><b>RFQ</b>Iconic Residence by Mered &middot; Dubai</span>
+                <strong class="auth-card__deal">Supply of 1,000 doors <mark>$1.2M relevant</mark></strong>
+              </span>
+            </div>
+            <div class="auth-card">
+              <span class="auth-card__pic"><img src="../assets/photos/p11.jpg" alt="" loading="lazy"></span>
+              <span class="auth-card__body">
+                <span class="auth-card__tag"><b>Tender</b>Business Bay Medical Campus &middot; closes in 12 days</span>
+                <strong class="auth-card__deal">Full MEP package <mark>$860K relevant</mark></strong>
+              </span>
+            </div>
+            <div class="auth-card">
+              <span class="auth-card__pic"><img src="../assets/photos/p01.jpg" alt="" loading="lazy"></span>
+              <span class="auth-card__body">
+                <span class="auth-card__tag"><b>New</b>Palm Gateway Towers &middot; Palm Jumeirah</span>
+                <strong class="auth-card__deal">Fa&ccedil;ade &amp; glazing scope <mark>$3.1M relevant</mark></strong>
+              </span>
+            </div>
+            <div class="auth-card">
+              <span class="auth-card__pic"><img src="../assets/photos/p07.jpg" alt="" loading="lazy"></span>
+              <span class="auth-card__body">
+                <span class="auth-card__tag"><b>BOQ</b>Marina Gate Waterfront &middot; Dubai Marina</span>
+                <strong class="auth-card__deal">Joinery BOQ uploaded <mark>$2.4M relevant</mark></strong>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-stats">
+          <span><b data-count="24000">0</b>+ projects</span>
+          <span><b data-count="9600">0</b>+ tenders</span>
+          <span><b data-count="160">0</b>+ researchers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RIGHT: form ============ -->
+    <section class="auth-panel">
+      <div class="auth-panel__inner">
+
+        <form class="auth-form" id="authForm" data-mode="signup" novalidate>
+          <h2 class="auth-form__title">
+            <span data-only="signup">Create your free account</span>
+            <span data-only="signin">Welcome back</span>
+          </h2>
+          <p class="auth-form__sub">
+            <span data-only="signup">Your 10 free projects are waiting on the other side.</span>
+            <span data-only="signin">Sign in to your BLOCS-ME workspace.</span>
+          </p>
+
+          <button type="button" class="auth-google" id="authGoogle">
+            <svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            Continue with Google
+          </button>
+
+          <div class="auth-div"><span>or with email</span></div>
+
+          <label class="auth-field">
+            <span>Work email</span>
+            <input type="email" name="email" id="authEmail" placeholder="you@company.com" autocomplete="email" required>
+          </label>
+
+          <label class="auth-field">
+            <span>Password</span>
+            <input type="password" name="password" id="authPass" placeholder="Min. 8 characters" autocomplete="new-password" minlength="8" required>
+          </label>
+
+          <label class="auth-agree" data-only="signup">
+            <input type="checkbox" id="authAgree">
+            <i aria-hidden="true"><svg viewBox="0 0 12 12" width="11" height="11" fill="none"><path d="M2 6.4l2.6 2.6L10 3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+            <span>I agree with <a href="https://www.blocsme.com/terms" target="_blank" rel="noopener">Terms of Service</a> and <a href="https://www.blocsme.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://www.blocsme.com/privacy" target="_blank" rel="noopener">Cookie Policy</a></span>
+          </label>
+
+          <p class="auth-forgot" data-only="signin"><a href="mailto:hello@blocs-me.com">Forgot password?</a></p>
+
+          <button type="submit" class="btn btn--solid btn--lg auth-submit" id="authSubmit">
+            <span data-only="signup">Get 10 free projects</span>
+            <span data-only="signin">Sign in</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+          </button>
+
+          <p class="auth-trust" data-only="signup">No credit card required &nbsp;&middot;&nbsp; Instant access</p>
+
+          <p class="auth-switch">
+            <span data-only="signup">Already have an account? <button type="button" data-switch="signin">Sign in</button></span>
+            <span data-only="signin">New to BLOCS-ME? <button type="button" data-switch="signup">Create free account</button></span>
+          </p>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="../js/auth.js?v=21" defer></script>
+</body>
+</html>

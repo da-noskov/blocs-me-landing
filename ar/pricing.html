@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأسعار — BLOCS-ME</title>
+  <meta name="description" content="Select the plan that best fits your business needs. Starter, Pro and Enterprise access to 24,000+ verified construction projects across the Middle East." />
+  <meta property="og:title" content="Pricing — BLOCS-ME" />
+  <meta property="og:description" content="Select the plan that best fits your business needs." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2310100F'/%3E%3Crect x='7' y='7' width='11' height='11' fill='%23FBBB21'/%3E%3Crect x='14' y='14' width='11' height='11' fill='%23E0DED7'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css?v=21" />
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="BLOCS-ME home">
+        <img class="logo-img" src="../assets/blocs-logo.svg?v=3" alt="" aria-hidden="true" draggable="false">
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="index.html#platform">المنصة</a>
+        <a href="index.html#tenders">المناقصات</a>
+        <a href="index.html#results">النتائج</a>
+        <a href="index.html#faq">الأسئلة الشائعة</a>
+        <a href="pricing.html" class="is-active" aria-current="page">الأسعار</a>
+      </nav>
+      <div class="nav__actions">
+        <details class="lang-dd"><summary><svg viewBox="0 0 16 16" width="13" height="13" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.3"/><path d="M1.8 8h12.4M8 1.8c-1.8 1.7-2.7 3.8-2.7 6.2s.9 4.5 2.7 6.2c1.8-1.7 2.7-3.8 2.7-6.2S9.8 3.5 8 1.8z" stroke="currentColor" stroke-width="1.3"/></svg>عربي<svg class="lang-dd__chev" viewBox="0 0 10 6" width="9" height="6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary><div class="lang-dd__list"><a href="../pricing.html">English</a><a class="is-on" href="pricing.html" hreflang="ar" lang="ar">العربية</a><a href="../zh/pricing.html" hreflang="zh-CN" lang="zh-CN">中文</a></div></details>
+        <a class="btn btn--ghost btn--sm" href="auth.html">تسجيل الدخول</a>
+        <a class="btn btn--solid btn--sm magnetic" href="index.html#cta">احجز عرضًا تجريبيًا</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html#platform">المنصة</a>
+    <a href="index.html#tenders">المناقصات</a>
+    <a href="index.html#results">النتائج</a>
+    <a href="index.html#faq">الأسئلة الشائعة</a>
+    <a href="pricing.html">الأسعار</a>
+    <div class="mobile-menu__langs">
+      <a class="lang-switch" href="../pricing.html">English</a>
+      <a class="lang-switch is-on" href="pricing.html" hreflang="ar" lang="ar">العربية</a>
+      <a class="lang-switch" href="../zh/pricing.html" hreflang="zh-CN" lang="zh-CN">中文</a>
+    </div>
+    <div class="mobile-menu__btns">
+      <a class="btn btn--ghost" href="auth.html">تسجيل الدخول</a>
+      <a class="btn btn--solid" href="index.html#cta">احجز عرضًا تجريبيًا</a>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ PRICING HERO ============ -->
+    <section class="phero">
+      <div class="container">
+        <p class="eyebrow fade-up"><span class="eyebrow__dot"></span> الأسعار</p>
+        <h1 class="h2 h2--sm">
+          <span class="line split">اختر الخطة الأنسب</span>
+          <span class="line split">لاحتياجات <em class="accent-italic">عملك</em>.</span>
+        </h1>
+        <div class="ptabs fade-up" role="tablist" aria-label="Plan type">
+          <button type="button" class="is-on" data-tab="seller" role="tab" aria-selected="true">البائعون</button>
+          <button type="button" data-tab="buyer" role="tab" aria-selected="false">المشترون</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLANS ============ -->
+    <section class="pplans">
+      <div class="container">
+
+        <div class="ppane is-on" data-pane="seller">
+          <div class="plans">
+
+            <article class="plan fade-up">
+              <header class="plan__head">
+                <h2 class="plan__name">Starter <span>&mdash; ابدأ واستكشف</span></h2>
+                <p class="plan__price">$0<em>/سنويًا</em></p>
+                <p class="plan__bestfor"><b>الأنسب لـ:</b> الشركات التي تستكشف المنصة وفرص السوق.</p>
+              </header>
+              <div class="plan__ft">
+                <h4>لماذا Starter</h4>
+                <ul>
+                  <li>تسجيل سريع</li>
+                  <li>ملف شركة أساسي</li>
+                  <li>استكشاف السوق بوصول عشوائي محدود</li>
+                  <li>ذكاء مشاريع محدود</li>
+                </ul>
+              </div>
+              <div class="plan__ft plan__ft--lim">
+                <h4>قيود يجب مراعاتها</h4>
+                <ul>
+                  <li>لا نشر ولا استقبال للمناقصات</li>
+                </ul>
+              </div>
+              <p class="plan__tip">اختر Starter إذا أردت الاطلاع على رؤى السوق بينما لا تزال تتحقق من قيمة المنصة.</p>
+              <a class="btn btn--solid btn--lg magnetic" href="index.html#cta">ابدأ الآن
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+              </a>
+            </article>
+
+            <article class="plan plan--accent fade-up">
+              <span class="plan__badge">الأكثر شيوعًا</span>
+              <header class="plan__head">
+                <h2 class="plan__name">Pro <span>&mdash; انمُ ونافس</span></h2>
+                <p class="plan__price">$3,999<em>/سنويًا</em></p>
+                <p class="plan__bestfor"><b>الأنسب لـ:</b> الشركات المستعدة للمشاركة والترويج والفوز بالمشاريع.</p>
+              </header>
+              <div class="plan__ft">
+                <h4>كل مزايا Starter، إضافةً إلى:</h4>
+                <ul>
+                  <li>ذكاء ورؤى مشاريع بلا حدود</li>
+                  <li>دولة واحدة من اختيارك</li>
+                  <li>مناقصات وطلبات RFQ من الدولة المختارة*</li>
+                  <li>مساعدة حتى 25 جهة اتصال رئيسية</li>
+                  <li>مزايا نادي المكافآت</li>
+                  <li>دعم توثيق الأعمال</li>
+                </ul>
+              </div>
+              <div class="plan__ft plan__ft--lim">
+                <h4>قيود يجب مراعاتها</h4>
+                <ul>
+                  <li>محدودة بدولة/سوق واحدة</li>
+                </ul>
+              </div>
+              <p class="plan__tip">اختر Pro إذا أردت المنافسة بفاعلية وتوليد الفرص وتعزيز حضورك في سوق واحدة.</p>
+              <a class="btn btn--dark btn--lg magnetic" href="index.html#cta">الترقية إلى Pro
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+              </a>
+            </article>
+
+            <article class="plan fade-up">
+              <header class="plan__head">
+                <h2 class="plan__name">Enterprise <span>&mdash; توسّع وتصدّر</span></h2>
+                <p class="plan__price">$6,888<em>/سنويًا</em></p>
+                <p class="plan__bestfor"><b>الأنسب لـ:</b> الشركات التي تدير أسواقًا متعددة ومشاريع كبيرة الحجم.</p>
+              </header>
+              <div class="plan__ft">
+                <h4>كل مزايا Pro، إضافةً إلى:</h4>
+                <ul>
+                  <li>وصول متعدد الدول حتى 3 دول</li>
+                  <li>مناقصات وطلبات RFQ من الدول المختارة</li>
+                  <li>مساعدة حتى 50 جهة اتصال رئيسية</li>
+                  <li>مدير علاقات مخصص</li>
+                </ul>
+              </div>
+              <p class="plan__tip">اختر Enterprise إذا أردت التوسع بلا حدود والفوز بالصفقات وتنمية الربحية.</p>
+              <a class="btn btn--solid btn--lg magnetic" href="index.html#cta">الترقية إلى Enterprise
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+              </a>
+            </article>
+
+          </div>
+
+          <!-- ============ COMPARISON ============ -->
+          <div class="pcompare fade-up">
+            <div class="pcompare__head">
+              <p class="eyebrow"><span class="eyebrow__dot"></span> قارن الخطط</p>
+            </div>
+            <div class="pcompare__wrap">
+              <table class="pcompare__table">
+                <thead>
+                  <tr>
+                    <th>الميزات</th>
+                    <th>Starter</th>
+                    <th class="is-hot">Pro</th>
+                    <th>Enterprise</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>التسجيل</b><span>وصول فوري دون تعقيدات</span></td>
+                    <td><i class="pc-yes"></i></td>
+                    <td class="is-hot"><i class="pc-yes"></i></td>
+                    <td><i class="pc-yes"></i></td>
+                  </tr>
+                  <tr>
+                    <td><b>ملف الشركة</b><span>رسّخ حضورك بين محترفي القطاع</span></td>
+                    <td>أساسي</td>
+                    <td class="is-hot">مُحسَّن</td>
+                    <td>مُحسَّن</td>
+                  </tr>
+                  <tr>
+                    <td><b>الوصول إلى السوق</b><span>وصول فوري إلى المشاريع النشطة في دولك المستهدفة</span></td>
+                    <td>وصول عشوائي محدود</td>
+                    <td class="is-hot">1</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td><b>ذكاء المشاريع</b><span>مُتحقَّق منها ومُراجَعة ومحدَّثة — لا تفوّت أي فرصة</span></td>
+                    <td>8</td>
+                    <td class="is-hot">بلا حدود</td>
+                    <td>بلا حدود</td>
+                  </tr>
+                  <tr>
+                    <td><b>المناقصات / RFQ</b><span>استقبل مناقصات وطلبات RFQ مطابقة لتخصصك</span></td>
+                    <td><i class="pc-no"></i></td>
+                    <td class="is-hot">120+ سنويًا</td>
+                    <td>250+ سنويًا</td>
+                  </tr>
+                  <tr>
+                    <td><b>المساعدة</b><span>جهات اتصال موثّقة لصنّاع القرار من اختيارك</span></td>
+                    <td><i class="pc-no"></i></td>
+                    <td class="is-hot">25/سنويًا</td>
+                    <td>50/سنويًا</td>
+                  </tr>
+                  <tr>
+                    <td><b>نادي المكافآت</b><span>كافئ نفسك على تفاعلك النشط في المنصة</span></td>
+                    <td><i class="pc-no"></i></td>
+                    <td class="is-hot"><i class="pc-yes"></i></td>
+                    <td><i class="pc-yes"></i></td>
+                  </tr>
+                  <tr>
+                    <td><b>دعم توثيق الأعمال</b><span>توثيق موجَّه وإدراج احترافي للشركة</span></td>
+                    <td><i class="pc-no"></i></td>
+                    <td class="is-hot"><i class="pc-yes"></i></td>
+                    <td><i class="pc-yes"></i></td>
+                  </tr>
+                  <tr>
+                    <td><b>خدمة العملاء</b><span>دعم سريع الاستجابة من BLOCS</span></td>
+                    <td>قياسي</td>
+                    <td class="is-hot">أساسي</td>
+                    <td>شخصي</td>
+                  </tr>
+                  <tr>
+                    <td><b>مدير العلاقات</b><span>مدير مخصص يتولى احتياجاتك على المنصة</span></td>
+                    <td><i class="pc-no"></i></td>
+                    <td class="is-hot"><i class="pc-no"></i></td>
+                    <td><i class="pc-yes"></i></td>
+                  </tr>
+                  <tr>
+                    <td><b>مدة الوصول</b><span>مدة صلاحية الاشتراك</span></td>
+                    <td>7 أيام</td>
+                    <td class="is-hot">سنة واحدة</td>
+                    <td>سنة واحدة</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="ppane" data-pane="buyer">
+          <div class="plans plans--2">
+
+            <article class="plan">
+              <header class="plan__head">
+                <h2 class="plan__name">Starter <span>&mdash; ابدأ واستكشف</span></h2>
+                <p class="plan__price">$0<em>/سنويًا</em></p>
+                <p class="plan__bestfor"><b>الأنسب لـ:</b> الشركات التي تستكشف المنصة وفرص السوق.</p>
+              </header>
+              <div class="plan__ft">
+                <h4>لماذا الخطة المجانية</h4>
+                <ul>
+                  <li>تسجيل سريع</li>
+                  <li>ملف شركة</li>
+                  <li>دولة واحدة من اختيارك</li>
+                  <li>مشاريع محدودة</li>
+                  <li>وصول إقليمي</li>
+                </ul>
+              </div>
+              <div class="plan__ft plan__ft--lim">
+                <h4>قيود يجب مراعاتها</h4>
+                <ul>
+                  <li>لا نشر ولا استقبال للمناقصات</li>
+                </ul>
+              </div>
+              <p class="plan__tip">اختر الخطة الأساسية إذا أردت وصولًا منخفض المخاطر إلى رؤى السوق بينما لا تزال تتحقق من قيمة المنصة.</p>
+              <a class="btn btn--solid btn--lg magnetic" href="index.html#cta">ابدأ الآن
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+              </a>
+            </article>
+
+            <article class="plan plan--accent">
+              <span class="plan__badge">الأكثر شيوعًا</span>
+              <header class="plan__head">
+                <h2 class="plan__name">Enterprise <span>&mdash; توسّع وتصدّر</span></h2>
+                <p class="plan__price">$3,000<em>/سنويًا</em></p>
+                <p class="plan__bestfor"><b>الأنسب لـ:</b> الشركات التي تدير أسواقًا متعددة ومشاريع كبيرة الحجم.</p>
+              </header>
+              <div class="plan__ft">
+                <h4>كل مزايا Starter، إضافةً إلى:</h4>
+                <ul>
+                  <li>مشاريع بلا حدود</li>
+                  <li>وصول دولي</li>
+                  <li>مورّدون موثّقون بلا حدود</li>
+                  <li>الوصول إلى نادي المكافآت</li>
+                  <li>مدير علاقات مخصص</li>
+                  <li>دعم توثيق الأعمال</li>
+                </ul>
+              </div>
+              <p class="plan__tip">اختر Enterprise إذا احتجت إلى التوسع وأولوية الوصول وشراكة عملية للفوز باستمرار.</p>
+              <a class="btn btn--dark btn--lg magnetic" href="index.html#cta">جرّبه مجانًا
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+              </a>
+              <p class="plan__btnnote">تجربة 90 يومًا</p>
+            </article>
+
+          </div>
+
+          <div class="pcompare">
+            <div class="pcompare__head">
+              <p class="eyebrow"><span class="eyebrow__dot"></span> قارن الخطط</p>
+            </div>
+            <div class="pcompare__wrap">
+              <table class="pcompare__table">
+                <thead>
+                  <tr>
+                    <th>الميزات</th>
+                    <th>Starter</th>
+                    <th class="is-hot">Enterprise</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>التسجيل</b><span>وصول فوري دون تعقيدات</span></td>
+                    <td><i class="pc-yes"></i></td>
+                    <td class="is-hot"><i class="pc-yes"></i></td>
+                  </tr>
+                  <tr>
+                    <td><b>ملف الشركة</b><span>رسّخ حضورك بين محترفي القطاع</span></td>
+                    <td>أساسي</td>
+                    <td class="is-hot">مُحسَّن</td>
+                  </tr>
+                  <tr>
+                    <td><b>الوصول إلى السوق</b><span>وصول فوري إلى المشاريع النشطة في دولك المستهدفة</span></td>
+                    <td>إقليمي</td>
+                    <td class="is-hot">دولي</td>
+                  </tr>
+                  <tr>
+                    <td><b>المشاريع</b><span>مُتحقَّق منها ومُراجَعة ومحدَّثة — لا تفوّت أي فرصة</span></td>
+                    <td>محدود</td>
+                    <td class="is-hot">بلا حدود</td>
+                  </tr>
+                  <tr>
+                    <td><b>المناقصات / RFQ</b><span>انشر مناقصات وطلبات RFQ لاحتياجات مشاريعك</span></td>
+                    <td>محدود</td>
+                    <td class="is-hot">بلا حدود</td>
+                  </tr>
+                  <tr>
+                    <td><b>نادي المكافآت</b><span>كافئ نفسك على تفاعلك النشط في المنصة</span></td>
+                    <td><i class="pc-no"></i></td>
+                    <td class="is-hot"><i class="pc-yes"></i></td>
+                  </tr>
+                  <tr>
+                    <td><b>الحسابات</b><span>ساعد المشترين في الوصول إليك أسرع</span></td>
+                    <td>1</td>
+                    <td class="is-hot">3</td>
+                  </tr>
+                  <tr>
+                    <td><b>دعم توثيق الأعمال</b><span>توثيق موجَّه وإدراج احترافي للشركة</span></td>
+                    <td><i class="pc-no"></i></td>
+                    <td class="is-hot"><i class="pc-yes"></i></td>
+                  </tr>
+                  <tr>
+                    <td><b>خدمة العملاء</b><span>دعم سريع الاستجابة من BLOCS</span></td>
+                    <td>قياسي</td>
+                    <td class="is-hot">Personalized</td>
+                  </tr>
+                  <tr>
+                    <td><b>مدير العلاقات</b><span>مدير مخصص يتولى احتياجاتك على المنصة</span></td>
+                    <td><i class="pc-no"></i></td>
+                    <td class="is-hot"><i class="pc-yes"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- final CTA -->
+        <div class="sec-cta fade-up">
+          <a class="btn btn--solid btn--lg magnetic" href="auth.html">احصل على 10 مشاريع مجانًا
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <p class="sec-cta__trust">لا حاجة لبطاقة ائتمان &nbsp;&middot;&nbsp; وصول فوري</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="BLOCS-ME home">
+          <img class="logo-img" src="../assets/blocs-logo.svg?v=3" alt="" aria-hidden="true" draggable="false">
+        </a>
+        <p class="footer__tagline">ذكاء مشاريع الإنشاءات في الشرق الأوسط.</p>
+        <div class="socials">
+          <a class="social" href="https://www.instagram.com/blocsme/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none"><rect x="3" y="3" width="18" height="18" rx="5.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
+          </a>
+          <a class="social" href="https://www.linkedin.com/company/blocsme" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M7.6 10.4v6M7.6 7.5v.1M11.4 16.4v-3.6c0-1.3.9-2.4 2.3-2.4s2.3 1.1 2.3 2.4v3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 9.4l4.6 2.6-4.6 2.6z" fill="currentColor"/></svg>
+          </a>
+          <a class="social" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none"><path d="M14.8 8.2h2.4V5h-2.4a3.9 3.9 0 0 0-3.9 3.9v2H8.6v3.1h2.3V21h3.2v-7h2.5l.5-3.1h-3V9.1c0-.5.4-.9.9-.9z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__col" aria-label="Footer">
+        <h4>القائمة</h4>
+        <a href="index.html#platform">المنصة</a>
+        <a href="index.html#tenders">المناقصات</a>
+        <a href="index.html#results">النتائج</a>
+        <a href="index.html#faq">الأسئلة الشائعة</a>
+        <a href="pricing.html">الأسعار</a>
+      </nav>
+
+      <div class="footer__col">
+        <h4>مكتب دبي</h4>
+        <a href="mailto:team@blocsme.com">team@blocsme.com</a>
+        <a href="tel:+971545365363">+971 54 536 5363</a>
+        <p>Property Investment Office 4<br>Dubai Investment Park First<br>Dubai, United Arab Emirates</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>مكتب قطر</h4>
+        <a href="mailto:team@blocsme.com">team@blocsme.com</a>
+        <a href="tel:+97466433997">+974 66 433 997</a>
+        <p>Ras Abu Fontas Free Zone<br>49 Street, 504 Building 1<br>Doha, State of Qatar</p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> BLOCS-ME. ذكاء مشاريع الإنشاءات.</p>
+      <p class="footer__meta">الإمارات · السعودية · قطر · عُمان · الكويت · البحرين · مصر</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js?v=21" defer></script>
+</body>
+</html>
